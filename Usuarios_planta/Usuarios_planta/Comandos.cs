@@ -20,14 +20,14 @@ namespace Usuarios_planta
         MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
 
-        public void Guardar_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
-            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
+        public void Guardar_datos_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
+            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtValor_Rtq, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
             TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor,
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, ComboBox cmbcampaña,TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
-            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado)
+            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtPendientes)
         {
             
             con.Open();            
@@ -50,6 +50,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_destino", cmbDestino.Text);
                 cmd.Parameters.AddWithValue("@_cambio_condiciones", cmbcambio_condiciones.Text);
                 cmd.Parameters.AddWithValue("@_r_Automatico", TxtRauto.Text);
+                cmd.Parameters.AddWithValue("@_valor_r_Automatico", TxtValor_Rtq.Text);
                 cmd.Parameters.AddWithValue("@_convenio", TxtConvenio.Text);
                 cmd.Parameters.AddWithValue("@_codigo_oficina", TxtCod_oficina.Text);
                 cmd.Parameters.AddWithValue("@_sucursal", TxtNom_oficina.Text);
@@ -96,8 +97,8 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_valor_cartera8", TxtValor8.Text);
                 cmd.Parameters.AddWithValue("@_total_cpk", TxtTotal.Text);
                 cmd.Parameters.AddWithValue("@_saldo_cliente", TxtSaldo.Text);
-                cmd.Parameters.AddWithValue("@_estado", cmbestado.Text);                
-                cmd.Parameters.AddWithValue("@_identificacion", usuario.Identificacion);
+                cmd.Parameters.AddWithValue("@_estado", cmbestado.Text);
+                cmd.Parameters.AddWithValue("@_pendientes", TxtPendientes.Text);
                 cmd.Parameters.AddWithValue("@_nombre_funcionario", usuario.Nombre);                
                 cmd.ExecuteNonQuery();
                 myTrans.Commit();
@@ -113,13 +114,13 @@ namespace Usuarios_planta
         }
 
         public void Buscar_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
-            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
-            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor, 
+            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtValor_Rtq, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
+            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor,
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, ComboBox cmbcampaña, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
-            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado)
+            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtPendientes)
         {
             
             try
@@ -144,6 +145,7 @@ namespace Usuarios_planta
                     cmbDestino.Text = registro["destino"].ToString();
                     cmbcambio_condiciones.Text = registro["cambio_condiciones"].ToString();
                     TxtRauto.Text = registro["r_Automatico"].ToString();
+                    TxtValor_Rtq.Text = registro["valor_r_Automatico"].ToString();
                     TxtConvenio.Text = registro["convenio"].ToString();
                     TxtCod_oficina.Text = registro["codigo_oficina"].ToString();
                     TxtNom_oficina.Text = registro["sucursal"].ToString();
@@ -190,7 +192,8 @@ namespace Usuarios_planta
                     TxtValor8.Text = registro["valor_cartera8"].ToString();
                     TxtTotal.Text = registro["total_cpk"].ToString();
                     TxtSaldo.Text = registro["saldo_cliente"].ToString();
-                    cmbestado.Text = registro["estado"].ToString();                                       
+                    cmbestado.Text = registro["estado"].ToString();
+                    TxtPendientes.Text = registro["pendientes"].ToString();
                     con.Close();
                 }
                 else

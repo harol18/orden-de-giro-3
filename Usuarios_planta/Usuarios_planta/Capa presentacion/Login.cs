@@ -15,15 +15,15 @@ using Usuarios_planta.Formularios;
 namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Login : Form
-    {      
+    {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-             
+        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+
 
         public Login()
         {
             InitializeComponent();
-        }
+        }                
 
         public void loguear(string user, string pass)
         {            
@@ -58,8 +58,7 @@ namespace Usuarios_planta.Capa_presentacion
             finally
             {
                 con.Close();
-            }
-            
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace Usuarios_planta.Capa_presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loguear(Txtusuario.Text, Txtcontraseña.Text);
+            loguear(Txtuser.Text, Txtpass.Text);
         }
     }
 }
