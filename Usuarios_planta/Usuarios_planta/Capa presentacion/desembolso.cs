@@ -143,7 +143,7 @@ namespace Usuarios_planta
         }
 
         private void BtnOrden_Click(object sender, EventArgs e)
-        {
+        {          
             Form formulario = new FormOrden();
             formulario.Show();
         }
@@ -152,5 +152,5 @@ namespace Usuarios_planta
         {
             lbfuncionario.Text = usuario.Nombre;
         }
-    }
+      }
 }

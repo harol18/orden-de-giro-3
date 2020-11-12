@@ -37,6 +37,7 @@ namespace Usuarios_planta.Formularios
 
         private void FormOrden_Load(object sender, EventArgs e)        
         {
+            lbfuncionario.Text = usuario.Nombre;
             TxtRauto.Enabled = false;
             TxtValor_Rtq.Enabled = false;
             Txtcod_giro.Enabled = false;
@@ -159,32 +160,42 @@ namespace Usuarios_planta.Formularios
         {
             if (cmbcambio_condiciones.Text== "Cliente Acepta" || cmbcambio_condiciones.Text == "No Aplica")
             {
-                if (cbimpagos.Checked && cbcuenta.Checked && cbrestriccion.Checked && cbpagador.Checked)
+                if (cmbDactiloscopia.Text== "Aprobada")
                 {
-                    if (TxtRauto.Text!="" && TxtValor_Rtq.Text=="")
+                    if (cbimpagos.Checked && cbcuenta.Checked && cbrestriccion.Checked && cbpagador.Checked)
                     {
-                        MessageBox.Show("Importante diligenciar el valor del retanqueo Automatico para validar el simulador","Información",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        if (TxtRauto.Text != "" && TxtValor_Rtq.Text == "")
+                        {
+                            MessageBox.Show("Importante diligenciar el valor del retanqueo Automatico para validar el simulador", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            BtnGuardar.Visible = false;
+                            BtnImprimir.Visible = false;
+                            BtnLimpiar.Visible = false;
+                            pbAñadir_cpk.Visible = false;
+
+                            Graphics g = this.CreateGraphics();
+                            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+                            Graphics mg = Graphics.FromImage(bmp);
+                            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+                            printPreviewDialog1.ShowDialog();
+                            BtnGuardar.Visible = true;
+                            BtnImprimir.Visible = true;
+                            BtnLimpiar.Visible = true;
+                            pbAñadir_cpk.Visible = true;
+                        }
                     }
                     else
                     {
-                        BtnGuardar.Visible = false;
-                        BtnImprimir.Visible = false;
-                        BtnLimpiar.Visible = false;
-
-                        Graphics g = this.CreateGraphics();
-                        bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-                        Graphics mg = Graphics.FromImage(bmp);
-                        mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-                        printPreviewDialog1.ShowDialog();
-                        BtnGuardar.Visible = true;
-                        BtnImprimir.Visible = true;
-                        BtnLimpiar.Visible = true;
-                    }                                   
+                        MessageBox.Show("Algunas de las actividades importantes se encuentra sin marcar", "Favor validar !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Algunas de las actividades importantes se encuentra sin marcar", "Favor validar !!!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                }             
+                    MessageBox.Show("Dactiloscopia no se encuentra en estado Aprobada, por favor validar previo al desembolso!!","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    cmbDactiloscopia.Focus();
+                }            
             } 
             else
             {
@@ -207,7 +218,6 @@ namespace Usuarios_planta.Formularios
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-
             cmds.Buscar_desembolso(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
                               TxtPlazo_solicitado, Txtplazo_aprobado, cmbDestino, cmbcambio_condiciones, TxtRauto, TxtValor_Rtq,TxtConvenio, TxtCod_oficina,  TxtNom_oficina, TxtCiudad,
                               Txtcod_giro, Txtoficina_girar, TxtId_gestor, TxtNom_gestor, cmbCoordinador, cmbDactiloscopia, cmbG_telefonica,cmbcampaña,
@@ -216,63 +226,71 @@ namespace Usuarios_planta.Formularios
                               Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
                               Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
                               TxtTotal, TxtSaldo, cmbestado,TxtPendientes);
-
-            if (TxtNom_entidad1.Text!= "")
+            if (TxtNom_entidad1.Text!="")
             {
-                Txtobligacion1.Visible = true;
                 TxtNom_entidad1.Visible = true;
+                Txtobligacion1.Visible = true;
                 TxtNit1.Visible = true;
-                TxtValor1.Visible = true;                
+                TxtValor1.Visible = true;
             }
             if (TxtNom_entidad2.Text != "")
             {
-                Txtobligacion2.Visible = true;
                 TxtNom_entidad2.Visible = true;
+                Txtobligacion2.Visible = true;
                 TxtNit2.Visible = true;
                 TxtValor2.Visible = true;
             }
             if (TxtNom_entidad3.Text != "")
             {
-                Txtobligacion3.Visible = true;
                 TxtNom_entidad3.Visible = true;
+                Txtobligacion3.Visible = true;
                 TxtNit3.Visible = true;
                 TxtValor3.Visible = true;
             }
             if (TxtNom_entidad4.Text != "")
             {
-                Txtobligacion4.Visible = true;
                 TxtNom_entidad4.Visible = true;
+                Txtobligacion4.Visible = true;
                 TxtNit4.Visible = true;
                 TxtValor4.Visible = true;
             }
             if (TxtNom_entidad5.Text != "")
             {
-                Txtobligacion5.Visible = true;
                 TxtNom_entidad5.Visible = true;
+                Txtobligacion5.Visible = true;
                 TxtNit5.Visible = true;
                 TxtValor5.Visible = true;
             }
             if (TxtNom_entidad6.Text != "")
             {
-                Txtobligacion6.Visible = true;
                 TxtNom_entidad6.Visible = true;
+                Txtobligacion6.Visible = true;
                 TxtNit6.Visible = true;
                 TxtValor6.Visible = true;
             }
             if (TxtNom_entidad7.Text != "")
             {
-                Txtobligacion7.Visible = true;
                 TxtNom_entidad7.Visible = true;
+                Txtobligacion7.Visible = true;
                 TxtNit7.Visible = true;
                 TxtValor7.Visible = true;
             }
             if (TxtNom_entidad8.Text != "")
             {
-                Txtobligacion8.Visible = true;
                 TxtNom_entidad8.Visible = true;
+                Txtobligacion8.Visible = true;
                 TxtNit8.Visible = true;
                 TxtValor8.Visible = true;
             }
+            if (TxtCedula.Text=="")
+            {
+                cmds.Buscar_datos_libranza(TxtRadicado, TxtCedula, TxtNombre, TxtScoring,TxtConvenio, TxtValor_aprobado, Txtplazo_aprobado);
+                TxtValor_aprobado.Focus();
+                if (TxtCedula.Text == "")
+                {
+                    MessageBox.Show("Caso No Existe","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);                    
+                }
+            }      
         }
 
         private bool validar()
@@ -380,7 +398,11 @@ namespace Usuarios_planta.Formularios
                 else 
                 {
                     TxtNit1.Text = registro["nit_entidad"].ToString();
-                }                
+                }
+            }
+            else
+            {
+                TxtNit1.Text = null;
             }
             con.Close();
         }
@@ -405,6 +427,10 @@ namespace Usuarios_planta.Formularios
                     TxtNit2.Text = registro["nit_entidad"].ToString();
                 }
             }
+            else
+            {
+                TxtNit2.Text = null;
+            }
             con.Close();
         }
 
@@ -427,6 +453,10 @@ namespace Usuarios_planta.Formularios
                 {
                     TxtNit3.Text = registro["nit_entidad"].ToString();
                 }
+            }
+            else
+            {
+                TxtNit3.Text = null;
             }
             con.Close();
         }
@@ -451,6 +481,10 @@ namespace Usuarios_planta.Formularios
                     TxtNit4.Text = registro["nit_entidad"].ToString();
                 }
             }
+            else
+            {
+                TxtNit4.Text = null;
+            }
             con.Close();
         }
 
@@ -473,6 +507,10 @@ namespace Usuarios_planta.Formularios
                 {
                     TxtNit5.Text = registro["nit_entidad"].ToString();
                 }
+            }
+            else
+            {
+                TxtNit5.Text = null;
             }
             con.Close();
         }
@@ -497,6 +535,10 @@ namespace Usuarios_planta.Formularios
                     TxtNit6.Text = registro["nit_entidad"].ToString();
                 }
             }
+            else
+            {
+                TxtNit6.Text = null;
+            }
             con.Close();
         }
 
@@ -519,6 +561,10 @@ namespace Usuarios_planta.Formularios
                 {
                     TxtNit7.Text = registro["nit_entidad"].ToString();                    
                 }
+            }
+            else
+            {
+                TxtNit7.Text = null;
             }
             con.Close();
         }
@@ -543,12 +589,17 @@ namespace Usuarios_planta.Formularios
                     TxtNit8.Text = registro["nit_entidad"].ToString();
                 }
             }
+            else
+            {
+                TxtNit8.Text = null;
+            }
             con.Close();
         }
+
+
         private void cmbCoordinador_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
-            
+            e.Handled = true;            
         }
 
         private void TxtValor1_Validated(object sender, EventArgs e)
@@ -744,7 +795,7 @@ namespace Usuarios_planta.Formularios
         }
 
         private void TxtEstatura_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        {            
             if (e.KeyChar == (char)(Keys.Enter))
             {
                 e.Handled = true;
@@ -999,6 +1050,11 @@ namespace Usuarios_planta.Formularios
                     Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
                 }
             }
+            else
+            {
+                TxtNom_oficina.Text = "";
+                TxtCiudad.Text = "";
+            }
             con.Close();
 
             if (TxtNom_oficina.Text.Contains("EMPRESAS"))
@@ -1009,7 +1065,7 @@ namespace Usuarios_planta.Formularios
             else if (TxtNom_oficina.Text.Contains("BANCA PERSONAL"))
             {
                 Txtcod_giro.Enabled = false;
-            }           
+            }                      
         }
 
         private void Txtcod_giro_Validated(object sender, EventArgs e)
@@ -1118,17 +1174,46 @@ namespace Usuarios_planta.Formularios
             }
             else if (cmbDestino.Text == "Libre Inversion")
             {
+                TxtValor_Rtq.Enabled = false;
+                TxtRauto.Enabled = false;
                 TxtNom_entidad1.Visible = false;
                 Txtobligacion1.Visible = false;
                 TxtNit1.Visible = false;
                 TxtValor1.Visible = false;
+                TxtNom_entidad2.Visible = false;
+                Txtobligacion2.Visible = false;
+                TxtNit2.Visible = false;
+                TxtValor2.Visible = false;
+                TxtNom_entidad3.Visible = false;
+                Txtobligacion3.Visible = false;
+                TxtNit3.Visible = false;
+                TxtValor3.Visible = false;
+                TxtNom_entidad4.Visible = false;
+                Txtobligacion4.Visible = false;
+                TxtNit4.Visible = false;
+                TxtValor4.Visible = false;
+                TxtNom_entidad5.Visible = false;
+                Txtobligacion5.Visible = false;
+                TxtNit5.Visible = false;
+                TxtValor5.Visible = false;
+                TxtNom_entidad6.Visible = false;
+                Txtobligacion6.Visible = false;
+                TxtNit6.Visible = false;
+                TxtValor6.Visible = false;
+                TxtNom_entidad7.Visible = false;
+                Txtobligacion7.Visible = false;
+                TxtNit7.Visible = false;
+                TxtValor7.Visible = false;
+                TxtNom_entidad8.Visible = false;
+                Txtobligacion8.Visible = false;
+                TxtNit8.Visible = false;
+                TxtValor8.Visible = false;
             }
             else
             {
                 TxtValor_Rtq.Enabled = false;
                 TxtRauto.Enabled = false;
             }
-
         }
 
         private void TxtNom_oficina_TextChanged(object sender, EventArgs e)
@@ -1255,13 +1340,22 @@ namespace Usuarios_planta.Formularios
         }
 
         private void TxtCuenta_Validated(object sender, EventArgs e)
-        {
+        {                      
             string largo = TxtCuenta.Text;
             string length = Convert.ToString(largo.Length);
 
             if (Convert.ToInt32(length) < 20)
             {
                 MessageBox.Show("Numero de la cuenta del cliente no contiene los 20 digitos correspondientes !! por favor revisar");
+            }
+            if (Convert.ToInt32(length) == 20 && TxtCod_oficina.Text!="")
+            {                
+                string cuenta = TxtCuenta.Text;
+                string cod_oficina = cuenta.Substring(5,3);
+                if (cod_oficina != TxtCod_oficina.Text)
+                {
+                    MessageBox.Show("Oficina de la cuenta no corresponde a la oficina a segmentar, por favor validar!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         
@@ -1272,7 +1366,7 @@ namespace Usuarios_planta.Formularios
                 if (Txtobligacion1.Visible == false)
                 {
                     Txtobligacion1.Visible = true;
-                    Txtobligacion1.Visible = true;
+                    TxtNom_entidad1.Visible = true;
                     TxtNit1.Visible = true;
                     TxtValor1.Visible = true;
                 }
@@ -1343,6 +1437,58 @@ namespace Usuarios_planta.Formularios
             }
         }
 
+        private void cmbcampaña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void TxtPeso_Validated(object sender, EventArgs e)
+        {
+            string extrae_estatura;            
+            int sobrepeso;
+            string resultado;
+            extrae_estatura = TxtEstatura.Text.Substring(TxtEstatura.Text.Length - 2);
+            sobrepeso = Convert.ToInt32(TxtPeso.Text) - Convert.ToInt32(extrae_estatura);
+            resultado = Convert.ToString(sobrepeso);
+            if (sobrepeso>=21)
+            {
+                MessageBox.Show("Cliente presenta sobrepeso, total diferencia " + resultado + " Kilos" ,"Información",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TxtScoring_Validated(object sender, EventArgs e)
+        {
+            string largo = TxtScoring.Text;
+            string length = Convert.ToString(largo.Length);
+
+            if (Convert.ToInt32(length) < 20)
+            {
+                MessageBox.Show("Numero de scoring no contiene los 20 digitos correspondientes !! por favor diligenciar completo");
+            }
+        }
+
+        private void Buscar_Entidad(object sender, EventArgs e)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_entidades WHERE nit_entidad = @nit_entidad ", con);
+            comando.Parameters.AddWithValue("@nit_entidad", TxtEntidad.Text);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+                lbentidad.Text = registro["nombre_entidad"].ToString();
+            }
+            else
+            {
+                lbentidad.Text = "Entidad no creada";
+            }
+            con.Close();
+        }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             this.Close();

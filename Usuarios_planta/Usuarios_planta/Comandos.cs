@@ -16,21 +16,19 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-
         MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
-
 
         public void Guardar_datos_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
             TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtValor_Rtq, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
             TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor,
-            ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, ComboBox cmbcampaña,TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
+            ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, ComboBox cmbcampaña, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
             TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtPendientes)
         {
-            
-            con.Open();            
+
+            con.Open();
             MySqlCommand cmd = new MySqlCommand("guardar_datos_desembolso", con);
             MySqlTransaction myTrans; // Iniciar una transacción local 
             myTrans = con.BeginTransaction(); // Debe asignar tanto el objeto de transacción como la conexión // al objeto de Comando para una transacción local pendiente 
@@ -42,7 +40,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_nombre", TxtNombre.Text);
                 cmd.Parameters.AddWithValue("@_cuenta", TxtCuenta.Text);
                 cmd.Parameters.AddWithValue("@_estatura", TxtEstatura.Text);
-                cmd.Parameters.AddWithValue("@_peso", TxtPeso.Text);               
+                cmd.Parameters.AddWithValue("@_peso", TxtPeso.Text);
                 cmd.Parameters.AddWithValue("@_scoring", TxtScoring.Text);
                 cmd.Parameters.AddWithValue("@_valor_aprobado", TxtValor_aprobado.Text);
                 cmd.Parameters.AddWithValue("@_plazo_solicitado", TxtPlazo_solicitado.Text);
@@ -99,7 +97,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_saldo_cliente", TxtSaldo.Text);
                 cmd.Parameters.AddWithValue("@_estado", cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_pendientes", TxtPendientes.Text);
-                cmd.Parameters.AddWithValue("@_nombre_funcionario", usuario.Nombre);                
+                cmd.Parameters.AddWithValue("@_nombre_funcionario", usuario.Nombre);
                 cmd.ExecuteNonQuery();
                 myTrans.Commit();
                 MessageBox.Show("Información Registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -122,7 +120,7 @@ namespace Usuarios_planta
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
             TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtPendientes)
         {
-            
+
             try
             {
                 con.Open();
@@ -132,7 +130,7 @@ namespace Usuarios_planta
                 MySqlDataReader registro;
                 registro = cmd.ExecuteReader();
                 if (registro.Read())
-                {
+                {                    
                     TxtCedula.Text = registro["cedula"].ToString();
                     TxtNombre.Text = registro["nombre"].ToString();
                     TxtEstatura.Text = registro["estatura"].ToString();
@@ -198,17 +196,53 @@ namespace Usuarios_planta
                 }
                 else
                 {
-                    MessageBox.Show("Caso no existe","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     con.Close();
                 }
                 con.Close();
             }
             catch (Exception ex)
-            { 
+            {
                 MessageBox.Show(ex.ToString());
                 con.Close();
                 MessageBox.Show("Conexion cerrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }       
+        }
+       
+
+        public void Buscar_datos_libranza(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre,TextBox TxtScoring,
+                                          TextBox TxtConvenio, TextBox TxtValor_aprobado,TextBox Txtplazo_aprobado)
+        {           
+
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("buscar_datos_libranza", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_radicado", TxtRadicado.Text);
+                MySqlDataReader registro;
+                registro = cmd.ExecuteReader();
+                if (registro.Read())
+                {                   
+                    TxtCedula.Text = registro["cedula"].ToString();
+                    TxtNombre.Text = registro["nombre"].ToString();                   
+                    TxtScoring.Text = registro["scoring"].ToString();
+                    TxtConvenio.Text = registro["convenio"].ToString();
+                    TxtValor_aprobado.Text = registro["valor_aprobado"].ToString();
+                    Txtplazo_aprobado.Text = registro["plazo_aprobado"].ToString();                    
+                    con.Close();
+                }
+                else
+                {                   
+                    con.Close();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

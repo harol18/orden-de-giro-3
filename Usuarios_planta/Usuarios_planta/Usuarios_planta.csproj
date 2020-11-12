@@ -254,6 +254,7 @@
     <None Include="Resources\simbolo-de-moneda-dolar%282%29.png" />
     <None Include="Resources\box_important_100px.png" />
     <None Include="Resources\plus_math_50px.png" />
+    <None Include="Resources\close_window_50px.png" />
     <Content Include="índice.ico" />
     <None Include="Resources\calculator_50px.png" />
   </ItemGroup>

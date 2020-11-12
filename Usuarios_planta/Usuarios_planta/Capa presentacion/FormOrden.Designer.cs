@@ -82,6 +82,7 @@
             this.TxtNom_oficina = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.lbexonerar = new System.Windows.Forms.Label();
             this.cmbG_telefonica = new System.Windows.Forms.ComboBox();
             this.cmbDactiloscopia = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -89,14 +90,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbcampaña = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.lblValor_Retanqueo = new System.Windows.Forms.Label();
             this.TxtValor_Rtq = new System.Windows.Forms.TextBox();
             this.cmbcambio_condiciones = new System.Windows.Forms.ComboBox();
             this.label49 = new System.Windows.Forms.Label();
+            this.TxtCuenta = new System.Windows.Forms.TextBox();
             this.Txtplazo_aprobado = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.cmbDestino = new System.Windows.Forms.ComboBox();
             this.TxtConvenio = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.TxtRauto = new System.Windows.Forms.TextBox();
             this.TxtPlazo_solicitado = new System.Windows.Forms.TextBox();
             this.TxtValor_aprobado = new System.Windows.Forms.TextBox();
@@ -107,19 +109,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblValor_Retanqueo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtEstatura = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
-            this.TxtCuenta = new System.Windows.Forms.TextBox();
             this.TxtRadicado = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cmbestado = new System.Windows.Forms.ComboBox();
@@ -129,7 +130,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.lbexonerar = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
@@ -149,10 +149,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnBuscar_Entidad = new FontAwesome.Sharp.IconButton();
+            this.TxtEntidad = new System.Windows.Forms.TextBox();
+            this.lbentidad = new System.Windows.Forms.Label();
             this.TxtPendientes = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.btn_segmentacion = new FontAwesome.Sharp.IconButton();
             this.Btn_comentarios = new FontAwesome.Sharp.IconButton();
+            this.lbfuncionario = new System.Windows.Forms.Label();
             this.pbAñadir_cpk = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -166,6 +172,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAñadir_cpk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -210,8 +217,9 @@
             this.groupBox4.Controls.Add(this.TxtValor1);
             this.groupBox4.Controls.Add(this.TxtNit1);
             this.groupBox4.Controls.Add(this.Txtobligacion1);
+            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(37, 372);
+            this.groupBox4.Location = new System.Drawing.Point(37, 410);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(972, 264);
             this.groupBox4.TabIndex = 8;
@@ -224,10 +232,10 @@
             this.TxtNom_entidad1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad1.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad1.Location = new System.Drawing.Point(224, 34);
+            this.TxtNom_entidad1.Location = new System.Drawing.Point(218, 34);
             this.TxtNom_entidad1.Name = "TxtNom_entidad1";
             this.TxtNom_entidad1.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad1.TabIndex = 21;
+            this.TxtNom_entidad1.TabIndex = 24;
             this.TxtNom_entidad1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad1.TextChanged += new System.EventHandler(this.TxtNom_entidad1_TextChanged);
             this.TxtNom_entidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad1_KeyPress);
@@ -237,11 +245,11 @@
             // 
             this.TxtValor3.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor3.Location = new System.Drawing.Point(790, 90);
+            this.TxtValor3.Location = new System.Drawing.Point(784, 90);
             this.TxtValor3.MaxLength = 20;
             this.TxtValor3.Name = "TxtValor3";
-            this.TxtValor3.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor3.TabIndex = 31;
+            this.TxtValor3.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor3.TabIndex = 34;
             this.TxtValor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor3.TextChanged += new System.EventHandler(this.TxtValor3_TextChanged);
             this.TxtValor3.Validated += new System.EventHandler(this.TxtValor3_Validated);
@@ -250,11 +258,11 @@
             // 
             this.TxtValor8.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor8.Location = new System.Drawing.Point(790, 230);
+            this.TxtValor8.Location = new System.Drawing.Point(784, 230);
             this.TxtValor8.MaxLength = 20;
             this.TxtValor8.Name = "TxtValor8";
-            this.TxtValor8.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor8.TabIndex = 51;
+            this.TxtValor8.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor8.TabIndex = 54;
             this.TxtValor8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor8.TextChanged += new System.EventHandler(this.TxtValor8_TextChanged);
             this.TxtValor8.Validated += new System.EventHandler(this.TxtValor8_Validated);
@@ -263,11 +271,11 @@
             // 
             this.TxtValor7.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor7.Location = new System.Drawing.Point(790, 202);
+            this.TxtValor7.Location = new System.Drawing.Point(784, 202);
             this.TxtValor7.MaxLength = 20;
             this.TxtValor7.Name = "TxtValor7";
-            this.TxtValor7.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor7.TabIndex = 47;
+            this.TxtValor7.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor7.TabIndex = 50;
             this.TxtValor7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor7.TextChanged += new System.EventHandler(this.TxtValor7_TextChanged);
             this.TxtValor7.Validated += new System.EventHandler(this.TxtValor7_Validated);
@@ -276,11 +284,11 @@
             // 
             this.TxtNit8.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit8.Location = new System.Drawing.Point(592, 230);
+            this.TxtNit8.Location = new System.Drawing.Point(586, 230);
             this.TxtNit8.MaxLength = 20;
             this.TxtNit8.Name = "TxtNit8";
             this.TxtNit8.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit8.TabIndex = 50;
+            this.TxtNit8.TabIndex = 53;
             this.TxtNit8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit8_KeyDown);
             // 
@@ -288,11 +296,11 @@
             // 
             this.TxtNit7.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit7.Location = new System.Drawing.Point(592, 202);
+            this.TxtNit7.Location = new System.Drawing.Point(586, 202);
             this.TxtNit7.MaxLength = 20;
             this.TxtNit7.Name = "TxtNit7";
             this.TxtNit7.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit7.TabIndex = 46;
+            this.TxtNit7.TabIndex = 49;
             this.TxtNit7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit7_KeyDown);
             // 
@@ -1850,10 +1858,10 @@
             this.TxtNom_entidad8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad8.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad8.Location = new System.Drawing.Point(224, 230);
+            this.TxtNom_entidad8.Location = new System.Drawing.Point(218, 230);
             this.TxtNom_entidad8.Name = "TxtNom_entidad8";
             this.TxtNom_entidad8.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad8.TabIndex = 49;
+            this.TxtNom_entidad8.TabIndex = 52;
             this.TxtNom_entidad8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad8.TextChanged += new System.EventHandler(this.TxtNom_entidad8_TextChanged);
             this.TxtNom_entidad8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad8_KeyPress);
@@ -3413,10 +3421,11 @@
             this.TxtNom_entidad7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad7.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad7.Location = new System.Drawing.Point(224, 202);
+            this.TxtNom_entidad7.Location = new System.Drawing.Point(218, 202);
             this.TxtNom_entidad7.Name = "TxtNom_entidad7";
             this.TxtNom_entidad7.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad7.TabIndex = 45;
+            this.TxtNom_entidad7.TabIndex = 48;
+            this.TxtNom_entidad7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad7.TextChanged += new System.EventHandler(this.TxtNom_entidad7_TextChanged);
             this.TxtNom_entidad7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad7_KeyPress);
             this.TxtNom_entidad7.Validated += new System.EventHandler(this.TxtNom_entidad7_Validated);
@@ -3425,11 +3434,11 @@
             // 
             this.Txtobligacion8.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion8.Location = new System.Drawing.Point(21, 230);
+            this.Txtobligacion8.Location = new System.Drawing.Point(15, 230);
             this.Txtobligacion8.MaxLength = 30;
             this.Txtobligacion8.Name = "Txtobligacion8";
             this.Txtobligacion8.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion8.TabIndex = 48;
+            this.Txtobligacion8.TabIndex = 51;
             this.Txtobligacion8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion8_KeyPress);
             // 
@@ -3437,11 +3446,11 @@
             // 
             this.Txtobligacion7.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion7.Location = new System.Drawing.Point(21, 202);
+            this.Txtobligacion7.Location = new System.Drawing.Point(15, 202);
             this.Txtobligacion7.MaxLength = 30;
             this.Txtobligacion7.Name = "Txtobligacion7";
             this.Txtobligacion7.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion7.TabIndex = 44;
+            this.Txtobligacion7.TabIndex = 47;
             this.Txtobligacion7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion7_KeyPress);
             // 
@@ -3449,11 +3458,11 @@
             // 
             this.TxtValor6.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor6.Location = new System.Drawing.Point(790, 174);
+            this.TxtValor6.Location = new System.Drawing.Point(784, 174);
             this.TxtValor6.MaxLength = 20;
             this.TxtValor6.Name = "TxtValor6";
-            this.TxtValor6.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor6.TabIndex = 43;
+            this.TxtValor6.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor6.TabIndex = 46;
             this.TxtValor6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor6.TextChanged += new System.EventHandler(this.TxtValor6_TextChanged);
             this.TxtValor6.Validated += new System.EventHandler(this.TxtValor6_Validated);
@@ -3462,11 +3471,11 @@
             // 
             this.TxtNit6.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit6.Location = new System.Drawing.Point(592, 174);
+            this.TxtNit6.Location = new System.Drawing.Point(586, 174);
             this.TxtNit6.MaxLength = 20;
             this.TxtNit6.Name = "TxtNit6";
             this.TxtNit6.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit6.TabIndex = 42;
+            this.TxtNit6.TabIndex = 45;
             this.TxtNit6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit6_KeyDown);
             // 
@@ -5024,10 +5033,10 @@
             this.TxtNom_entidad6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad6.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad6.Location = new System.Drawing.Point(224, 174);
+            this.TxtNom_entidad6.Location = new System.Drawing.Point(218, 174);
             this.TxtNom_entidad6.Name = "TxtNom_entidad6";
             this.TxtNom_entidad6.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad6.TabIndex = 41;
+            this.TxtNom_entidad6.TabIndex = 44;
             this.TxtNom_entidad6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad6.TextChanged += new System.EventHandler(this.TxtNom_entidad6_TextChanged);
             this.TxtNom_entidad6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad6_KeyPress);
@@ -5037,11 +5046,11 @@
             // 
             this.Txtobligacion6.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion6.Location = new System.Drawing.Point(21, 174);
+            this.Txtobligacion6.Location = new System.Drawing.Point(15, 174);
             this.Txtobligacion6.MaxLength = 30;
             this.Txtobligacion6.Name = "Txtobligacion6";
             this.Txtobligacion6.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion6.TabIndex = 40;
+            this.Txtobligacion6.TabIndex = 43;
             this.Txtobligacion6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion6_KeyPress);
             // 
@@ -5049,11 +5058,11 @@
             // 
             this.TxtValor5.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor5.Location = new System.Drawing.Point(790, 146);
+            this.TxtValor5.Location = new System.Drawing.Point(784, 146);
             this.TxtValor5.MaxLength = 20;
             this.TxtValor5.Name = "TxtValor5";
-            this.TxtValor5.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor5.TabIndex = 39;
+            this.TxtValor5.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor5.TabIndex = 42;
             this.TxtValor5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor5.TextChanged += new System.EventHandler(this.TxtValor5_TextChanged);
             this.TxtValor5.Validated += new System.EventHandler(this.TxtValor5_Validated);
@@ -5062,11 +5071,11 @@
             // 
             this.TxtNit5.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit5.Location = new System.Drawing.Point(592, 146);
+            this.TxtNit5.Location = new System.Drawing.Point(586, 146);
             this.TxtNit5.MaxLength = 20;
             this.TxtNit5.Name = "TxtNit5";
             this.TxtNit5.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit5.TabIndex = 38;
+            this.TxtNit5.TabIndex = 41;
             this.TxtNit5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit5_KeyDown);
             // 
@@ -6624,10 +6633,10 @@
             this.TxtNom_entidad5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad5.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad5.Location = new System.Drawing.Point(224, 146);
+            this.TxtNom_entidad5.Location = new System.Drawing.Point(218, 146);
             this.TxtNom_entidad5.Name = "TxtNom_entidad5";
             this.TxtNom_entidad5.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad5.TabIndex = 37;
+            this.TxtNom_entidad5.TabIndex = 40;
             this.TxtNom_entidad5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad5.TextChanged += new System.EventHandler(this.TxtNom_entidad5_TextChanged);
             this.TxtNom_entidad5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad5_KeyPress);
@@ -6637,11 +6646,11 @@
             // 
             this.Txtobligacion5.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion5.Location = new System.Drawing.Point(21, 146);
+            this.Txtobligacion5.Location = new System.Drawing.Point(15, 146);
             this.Txtobligacion5.MaxLength = 30;
             this.Txtobligacion5.Name = "Txtobligacion5";
             this.Txtobligacion5.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion5.TabIndex = 36;
+            this.Txtobligacion5.TabIndex = 39;
             this.Txtobligacion5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion5_KeyPress);
             // 
@@ -6649,11 +6658,11 @@
             // 
             this.TxtValor4.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor4.Location = new System.Drawing.Point(790, 118);
+            this.TxtValor4.Location = new System.Drawing.Point(784, 118);
             this.TxtValor4.MaxLength = 20;
             this.TxtValor4.Name = "TxtValor4";
-            this.TxtValor4.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor4.TabIndex = 35;
+            this.TxtValor4.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor4.TabIndex = 38;
             this.TxtValor4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor4.TextChanged += new System.EventHandler(this.TxtValor4_TextChanged);
             this.TxtValor4.Validated += new System.EventHandler(this.TxtValor4_Validated);
@@ -6662,11 +6671,11 @@
             // 
             this.TxtNit4.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit4.Location = new System.Drawing.Point(592, 118);
+            this.TxtNit4.Location = new System.Drawing.Point(586, 118);
             this.TxtNit4.MaxLength = 20;
             this.TxtNit4.Name = "TxtNit4";
             this.TxtNit4.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit4.TabIndex = 34;
+            this.TxtNit4.TabIndex = 37;
             this.TxtNit4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit4_KeyDown);
             // 
@@ -8224,10 +8233,10 @@
             this.TxtNom_entidad4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad4.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad4.Location = new System.Drawing.Point(224, 118);
+            this.TxtNom_entidad4.Location = new System.Drawing.Point(218, 118);
             this.TxtNom_entidad4.Name = "TxtNom_entidad4";
             this.TxtNom_entidad4.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad4.TabIndex = 33;
+            this.TxtNom_entidad4.TabIndex = 36;
             this.TxtNom_entidad4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad4.TextChanged += new System.EventHandler(this.TxtNom_entidad4_TextChanged);
             this.TxtNom_entidad4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad4_KeyPress);
@@ -8237,11 +8246,11 @@
             // 
             this.Txtobligacion4.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion4.Location = new System.Drawing.Point(21, 118);
+            this.Txtobligacion4.Location = new System.Drawing.Point(15, 118);
             this.Txtobligacion4.MaxLength = 30;
             this.Txtobligacion4.Name = "Txtobligacion4";
             this.Txtobligacion4.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion4.TabIndex = 32;
+            this.Txtobligacion4.TabIndex = 35;
             this.Txtobligacion4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion4_KeyPress);
             // 
@@ -8249,11 +8258,11 @@
             // 
             this.TxtNit3.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit3.Location = new System.Drawing.Point(592, 90);
+            this.TxtNit3.Location = new System.Drawing.Point(586, 90);
             this.TxtNit3.MaxLength = 20;
             this.TxtNit3.Name = "TxtNit3";
             this.TxtNit3.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit3.TabIndex = 30;
+            this.TxtNit3.TabIndex = 33;
             this.TxtNit3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit3_KeyDown);
             // 
@@ -8263,10 +8272,10 @@
             this.TxtNom_entidad3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad3.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad3.Location = new System.Drawing.Point(224, 90);
+            this.TxtNom_entidad3.Location = new System.Drawing.Point(218, 90);
             this.TxtNom_entidad3.Name = "TxtNom_entidad3";
             this.TxtNom_entidad3.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad3.TabIndex = 29;
+            this.TxtNom_entidad3.TabIndex = 32;
             this.TxtNom_entidad3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad3.TextChanged += new System.EventHandler(this.TxtNom_entidad3_TextChanged);
             this.TxtNom_entidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad3_KeyPress);
@@ -8276,11 +8285,11 @@
             // 
             this.Txtobligacion3.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion3.Location = new System.Drawing.Point(21, 90);
+            this.Txtobligacion3.Location = new System.Drawing.Point(15, 90);
             this.Txtobligacion3.MaxLength = 30;
             this.Txtobligacion3.Name = "Txtobligacion3";
             this.Txtobligacion3.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion3.TabIndex = 28;
+            this.Txtobligacion3.TabIndex = 31;
             this.Txtobligacion3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion3_KeyPress);
             // 
@@ -8288,11 +8297,11 @@
             // 
             this.TxtValor2.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor2.Location = new System.Drawing.Point(790, 62);
+            this.TxtValor2.Location = new System.Drawing.Point(784, 62);
             this.TxtValor2.MaxLength = 20;
             this.TxtValor2.Name = "TxtValor2";
-            this.TxtValor2.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor2.TabIndex = 27;
+            this.TxtValor2.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor2.TabIndex = 30;
             this.TxtValor2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor2.TextChanged += new System.EventHandler(this.TxtValor2_TextChanged);
             this.TxtValor2.Validated += new System.EventHandler(this.TxtValor2_Validated);
@@ -8301,11 +8310,11 @@
             // 
             this.TxtNit2.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit2.Location = new System.Drawing.Point(592, 62);
+            this.TxtNit2.Location = new System.Drawing.Point(586, 62);
             this.TxtNit2.MaxLength = 20;
             this.TxtNit2.Name = "TxtNit2";
             this.TxtNit2.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit2.TabIndex = 26;
+            this.TxtNit2.TabIndex = 29;
             this.TxtNit2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit2_KeyDown);
             // 
@@ -8315,10 +8324,10 @@
             this.TxtNom_entidad2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtNom_entidad2.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_entidad2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_entidad2.Location = new System.Drawing.Point(224, 62);
+            this.TxtNom_entidad2.Location = new System.Drawing.Point(218, 62);
             this.TxtNom_entidad2.Name = "TxtNom_entidad2";
             this.TxtNom_entidad2.Size = new System.Drawing.Size(367, 27);
-            this.TxtNom_entidad2.TabIndex = 25;
+            this.TxtNom_entidad2.TabIndex = 28;
             this.TxtNom_entidad2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad2.TextChanged += new System.EventHandler(this.TxtNom_entidad2_TextChanged);
             this.TxtNom_entidad2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad2_KeyPress);
@@ -8328,11 +8337,11 @@
             // 
             this.Txtobligacion2.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion2.Location = new System.Drawing.Point(21, 62);
+            this.Txtobligacion2.Location = new System.Drawing.Point(15, 62);
             this.Txtobligacion2.MaxLength = 30;
             this.Txtobligacion2.Name = "Txtobligacion2";
             this.Txtobligacion2.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion2.TabIndex = 24;
+            this.Txtobligacion2.TabIndex = 27;
             this.Txtobligacion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
@@ -8379,11 +8388,11 @@
             // 
             this.TxtValor1.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor1.Location = new System.Drawing.Point(790, 34);
+            this.TxtValor1.Location = new System.Drawing.Point(784, 34);
             this.TxtValor1.MaxLength = 20;
             this.TxtValor1.Name = "TxtValor1";
-            this.TxtValor1.Size = new System.Drawing.Size(174, 27);
-            this.TxtValor1.TabIndex = 23;
+            this.TxtValor1.Size = new System.Drawing.Size(180, 27);
+            this.TxtValor1.TabIndex = 26;
             this.TxtValor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor1.TextChanged += new System.EventHandler(this.TxtValor1_TextChanged);
             this.TxtValor1.Validated += new System.EventHandler(this.TxtValor1_Validated);
@@ -8392,12 +8401,12 @@
             // 
             this.TxtNit1.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNit1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNit1.Location = new System.Drawing.Point(592, 34);
+            this.TxtNit1.Location = new System.Drawing.Point(586, 34);
             this.TxtNit1.MaxLength = 20;
             this.TxtNit1.Name = "TxtNit1";
             this.TxtNit1.ShortcutsEnabled = false;
             this.TxtNit1.Size = new System.Drawing.Size(197, 27);
-            this.TxtNit1.TabIndex = 22;
+            this.TxtNit1.TabIndex = 25;
             this.TxtNit1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNit1_KeyDown);
             // 
@@ -8405,11 +8414,11 @@
             // 
             this.Txtobligacion1.BackColor = System.Drawing.SystemColors.Window;
             this.Txtobligacion1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtobligacion1.Location = new System.Drawing.Point(21, 34);
+            this.Txtobligacion1.Location = new System.Drawing.Point(15, 34);
             this.Txtobligacion1.MaxLength = 30;
             this.Txtobligacion1.Name = "Txtobligacion1";
             this.Txtobligacion1.Size = new System.Drawing.Size(202, 27);
-            this.Txtobligacion1.TabIndex = 20;
+            this.Txtobligacion1.TabIndex = 23;
             this.Txtobligacion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtobligacion1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtobligacion1_KeyPress);
             // 
@@ -8430,9 +8439,9 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(37, 251);
+            this.groupBox3.Location = new System.Drawing.Point(37, 279);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(972, 121);
+            this.groupBox3.Size = new System.Drawing.Size(972, 130);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Generales";
@@ -8442,11 +8451,11 @@
             this.Txtcod_giro.BackColor = System.Drawing.SystemColors.Window;
             this.Txtcod_giro.Enabled = false;
             this.Txtcod_giro.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtcod_giro.Location = new System.Drawing.Point(128, 51);
+            this.Txtcod_giro.Location = new System.Drawing.Point(597, 42);
             this.Txtcod_giro.Multiline = true;
             this.Txtcod_giro.Name = "Txtcod_giro";
             this.Txtcod_giro.Size = new System.Drawing.Size(67, 28);
-            this.Txtcod_giro.TabIndex = 29;
+            this.Txtcod_giro.TabIndex = 19;
             this.Txtcod_giro.Text = " ";
             this.Txtcod_giro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtcod_giro.Validated += new System.EventHandler(this.Txtcod_giro_Validated);
@@ -8457,10 +8466,10 @@
             this.cmbCoordinador.DisplayMember = "Coordinador";
             this.cmbCoordinador.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
             this.cmbCoordinador.FormattingEnabled = true;
-            this.cmbCoordinador.Location = new System.Drawing.Point(713, 85);
+            this.cmbCoordinador.Location = new System.Drawing.Point(461, 92);
             this.cmbCoordinador.Name = "cmbCoordinador";
             this.cmbCoordinador.Size = new System.Drawing.Size(251, 28);
-            this.cmbCoordinador.TabIndex = 19;
+            this.cmbCoordinador.TabIndex = 22;
             this.cmbCoordinador.ValueMember = "Coordinador";
             this.cmbCoordinador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCoordinador_KeyPress);
             // 
@@ -8468,12 +8477,12 @@
             // 
             this.TxtNom_gestor.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNom_gestor.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_gestor.Location = new System.Drawing.Point(327, 85);
+            this.TxtNom_gestor.Location = new System.Drawing.Point(155, 92);
             this.TxtNom_gestor.MaxLength = 100;
             this.TxtNom_gestor.Multiline = true;
             this.TxtNom_gestor.Name = "TxtNom_gestor";
             this.TxtNom_gestor.Size = new System.Drawing.Size(297, 28);
-            this.TxtNom_gestor.TabIndex = 18;
+            this.TxtNom_gestor.TabIndex = 21;
             this.TxtNom_gestor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_gestor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_gestor_KeyPress);
             // 
@@ -8481,21 +8490,21 @@
             // 
             this.Txtoficina_girar.BackColor = System.Drawing.SystemColors.Menu;
             this.Txtoficina_girar.Enabled = false;
-            this.Txtoficina_girar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtoficina_girar.Location = new System.Drawing.Point(210, 51);
+            this.Txtoficina_girar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Txtoficina_girar.Location = new System.Drawing.Point(664, 42);
             this.Txtoficina_girar.Multiline = true;
             this.Txtoficina_girar.Name = "Txtoficina_girar";
-            this.Txtoficina_girar.Size = new System.Drawing.Size(338, 28);
+            this.Txtoficina_girar.Size = new System.Drawing.Size(300, 28);
             this.Txtoficina_girar.TabIndex = 27;
             this.Txtoficina_girar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(7, 58);
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label34.Location = new System.Drawing.Point(594, 23);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(92, 17);
+            this.label34.Size = new System.Drawing.Size(92, 16);
             this.label34.TabIndex = 28;
             this.label34.Text = "Oficina a Girar";
             // 
@@ -8503,12 +8512,12 @@
             // 
             this.TxtId_gestor.BackColor = System.Drawing.SystemColors.Window;
             this.TxtId_gestor.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtId_gestor.Location = new System.Drawing.Point(100, 85);
+            this.TxtId_gestor.Location = new System.Drawing.Point(15, 92);
             this.TxtId_gestor.MaxLength = 10;
             this.TxtId_gestor.Multiline = true;
             this.TxtId_gestor.Name = "TxtId_gestor";
-            this.TxtId_gestor.Size = new System.Drawing.Size(121, 28);
-            this.TxtId_gestor.TabIndex = 17;
+            this.TxtId_gestor.Size = new System.Drawing.Size(126, 28);
+            this.TxtId_gestor.TabIndex = 20;
             this.TxtId_gestor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtId_gestor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtId_gestor_KeyPress);
             // 
@@ -8516,54 +8525,54 @@
             // 
             this.TxtCiudad.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtCiudad.Enabled = false;
-            this.TxtCiudad.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtCiudad.Location = new System.Drawing.Point(611, 18);
+            this.TxtCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtCiudad.Location = new System.Drawing.Point(385, 42);
             this.TxtCiudad.MaxLength = 30;
             this.TxtCiudad.Multiline = true;
             this.TxtCiudad.Name = "TxtCiudad";
-            this.TxtCiudad.Size = new System.Drawing.Size(155, 28);
+            this.TxtCiudad.Size = new System.Drawing.Size(194, 28);
             this.TxtCiudad.TabIndex = 14;
             this.TxtCiudad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(631, 90);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label17.Location = new System.Drawing.Point(458, 73);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 17);
+            this.label17.Size = new System.Drawing.Size(135, 16);
             this.label17.TabIndex = 17;
-            this.label17.Text = "Coordinador";
+            this.label17.Text = "Nombre Coordinador";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(227, 90);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label16.Location = new System.Drawing.Point(152, 73);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(100, 17);
+            this.label16.Size = new System.Drawing.Size(100, 16);
             this.label16.TabIndex = 16;
             this.label16.Text = "Nombre Gestor";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 90);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label15.Location = new System.Drawing.Point(12, 73);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 17);
+            this.label15.Size = new System.Drawing.Size(94, 16);
             this.label15.TabIndex = 15;
-            this.label15.Text = "Id Gestor";
+            this.label15.Text = "Cedula Gestor";
             // 
             // TxtCod_oficina
             // 
             this.TxtCod_oficina.BackColor = System.Drawing.SystemColors.Window;
             this.TxtCod_oficina.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtCod_oficina.Location = new System.Drawing.Point(128, 16);
+            this.TxtCod_oficina.Location = new System.Drawing.Point(15, 42);
             this.TxtCod_oficina.Multiline = true;
             this.TxtCod_oficina.Name = "TxtCod_oficina";
             this.TxtCod_oficina.Size = new System.Drawing.Size(67, 28);
-            this.TxtCod_oficina.TabIndex = 16;
+            this.TxtCod_oficina.TabIndex = 18;
             this.TxtCod_oficina.Text = " ";
             this.TxtCod_oficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtCod_oficina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCod_oficina_KeyPress);
@@ -8573,11 +8582,11 @@
             // 
             this.TxtNom_oficina.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtNom_oficina.Enabled = false;
-            this.TxtNom_oficina.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNom_oficina.Location = new System.Drawing.Point(210, 16);
+            this.TxtNom_oficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNom_oficina.Location = new System.Drawing.Point(82, 42);
             this.TxtNom_oficina.Multiline = true;
             this.TxtNom_oficina.Name = "TxtNom_oficina";
-            this.TxtNom_oficina.Size = new System.Drawing.Size(338, 28);
+            this.TxtNom_oficina.Size = new System.Drawing.Size(301, 28);
             this.TxtNom_oficina.TabIndex = 13;
             this.TxtNom_oficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_oficina.TextChanged += new System.EventHandler(this.TxtNom_oficina_TextChanged);
@@ -8585,22 +8594,33 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(7, 23);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label12.Location = new System.Drawing.Point(12, 23);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 17);
+            this.label12.Size = new System.Drawing.Size(96, 16);
             this.label12.TabIndex = 24;
-            this.label12.Text = "Oficina Segmentar";
+            this.label12.Text = "Codigo Oficina";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(558, 23);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label14.Location = new System.Drawing.Point(382, 23);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 17);
+            this.label14.Size = new System.Drawing.Size(51, 16);
             this.label14.TabIndex = 26;
             this.label14.Text = "Ciudad";
+            // 
+            // lbexonerar
+            // 
+            this.lbexonerar.AutoSize = true;
+            this.lbexonerar.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbexonerar.ForeColor = System.Drawing.Color.Red;
+            this.lbexonerar.Location = new System.Drawing.Point(753, 46);
+            this.lbexonerar.Name = "lbexonerar";
+            this.lbexonerar.Size = new System.Drawing.Size(182, 21);
+            this.lbexonerar.TabIndex = 81;
+            this.lbexonerar.Text = "Se debe exonerar credito";
             // 
             // cmbG_telefonica
             // 
@@ -8609,11 +8629,12 @@
             this.cmbG_telefonica.FormattingEnabled = true;
             this.cmbG_telefonica.Items.AddRange(new object[] {
             "Aprobada",
-            "Pendiente"});
-            this.cmbG_telefonica.Location = new System.Drawing.Point(327, 93);
+            "Pendiente",
+            "No Aplica"});
+            this.cmbG_telefonica.Location = new System.Drawing.Point(212, 142);
             this.cmbG_telefonica.Name = "cmbG_telefonica";
-            this.cmbG_telefonica.Size = new System.Drawing.Size(123, 28);
-            this.cmbG_telefonica.TabIndex = 15;
+            this.cmbG_telefonica.Size = new System.Drawing.Size(144, 28);
+            this.cmbG_telefonica.TabIndex = 16;
             // 
             // cmbDactiloscopia
             // 
@@ -8624,28 +8645,28 @@
             "Aprobada",
             "Pendiente",
             "Negada"});
-            this.cmbDactiloscopia.Location = new System.Drawing.Point(96, 91);
+            this.cmbDactiloscopia.Location = new System.Drawing.Point(15, 142);
             this.cmbDactiloscopia.Name = "cmbDactiloscopia";
-            this.cmbDactiloscopia.Size = new System.Drawing.Size(131, 28);
-            this.cmbDactiloscopia.TabIndex = 14;
+            this.cmbDactiloscopia.Size = new System.Drawing.Size(162, 28);
+            this.cmbDactiloscopia.TabIndex = 15;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(240, 96);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label19.Location = new System.Drawing.Point(216, 123);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(80, 17);
+            this.label19.Size = new System.Drawing.Size(85, 16);
             this.label19.TabIndex = 22;
             this.label19.Text = "G Telefonica";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(7, 96);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label18.Location = new System.Drawing.Point(12, 123);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 17);
+            this.label18.Size = new System.Drawing.Size(91, 16);
             this.label18.TabIndex = 20;
             this.label18.Text = "Dactiloscopia";
             // 
@@ -8653,16 +8674,17 @@
             // 
             this.groupBox2.Controls.Add(this.cmbcampaña);
             this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.lblValor_Retanqueo);
             this.groupBox2.Controls.Add(this.TxtValor_Rtq);
             this.groupBox2.Controls.Add(this.cmbcambio_condiciones);
             this.groupBox2.Controls.Add(this.label49);
+            this.groupBox2.Controls.Add(this.TxtCuenta);
             this.groupBox2.Controls.Add(this.Txtplazo_aprobado);
             this.groupBox2.Controls.Add(this.label48);
             this.groupBox2.Controls.Add(this.cmbG_telefonica);
             this.groupBox2.Controls.Add(this.cmbDestino);
             this.groupBox2.Controls.Add(this.cmbDactiloscopia);
             this.groupBox2.Controls.Add(this.TxtConvenio);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.TxtRauto);
             this.groupBox2.Controls.Add(this.TxtPlazo_solicitado);
             this.groupBox2.Controls.Add(this.TxtValor_aprobado);
@@ -8675,10 +8697,11 @@
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblValor_Retanqueo);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(37, 124);
+            this.groupBox2.Location = new System.Drawing.Point(37, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(971, 127);
+            this.groupBox2.Size = new System.Drawing.Size(971, 180);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Prestamo";
@@ -8686,7 +8709,7 @@
             // cmbcampaña
             // 
             this.cmbcampaña.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbcampaña.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbcampaña.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbcampaña.FormattingEnabled = true;
             this.cmbcampaña.Items.AddRange(new object[] {
             "Campaña Digital Covid 19",
@@ -8694,41 +8717,32 @@
             "Campaña Leads Digital Covid 19",
             "Campaña Leads",
             "No Aplica"});
-            this.cmbcampaña.Location = new System.Drawing.Point(541, 91);
+            this.cmbcampaña.Location = new System.Drawing.Point(522, 92);
             this.cmbcampaña.Name = "cmbcampaña";
-            this.cmbcampaña.Size = new System.Drawing.Size(209, 25);
-            this.cmbcampaña.TabIndex = 84;
+            this.cmbcampaña.Size = new System.Drawing.Size(258, 28);
+            this.cmbcampaña.TabIndex = 14;
             this.cmbcampaña.SelectedIndexChanged += new System.EventHandler(this.cmbCampaña_SelectedIndexChanged);
+            this.cmbcampaña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbcampaña_KeyPress);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(474, 94);
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label26.Location = new System.Drawing.Point(521, 73);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(63, 17);
+            this.label26.Size = new System.Drawing.Size(67, 16);
             this.label26.TabIndex = 85;
             this.label26.Text = "Campaña";
-            // 
-            // lblValor_Retanqueo
-            // 
-            this.lblValor_Retanqueo.AutoSize = true;
-            this.lblValor_Retanqueo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor_Retanqueo.Location = new System.Drawing.Point(756, 60);
-            this.lblValor_Retanqueo.Name = "lblValor_Retanqueo";
-            this.lblValor_Retanqueo.Size = new System.Drawing.Size(64, 17);
-            this.lblValor_Retanqueo.TabIndex = 83;
-            this.lblValor_Retanqueo.Text = "Valor_Rtq";
             // 
             // TxtValor_Rtq
             // 
             this.TxtValor_Rtq.BackColor = System.Drawing.SystemColors.Window;
             this.TxtValor_Rtq.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor_Rtq.Location = new System.Drawing.Point(826, 55);
+            this.TxtValor_Rtq.Location = new System.Drawing.Point(212, 92);
             this.TxtValor_Rtq.MaxLength = 20;
             this.TxtValor_Rtq.Name = "TxtValor_Rtq";
-            this.TxtValor_Rtq.Size = new System.Drawing.Size(138, 27);
-            this.TxtValor_Rtq.TabIndex = 82;
+            this.TxtValor_Rtq.Size = new System.Drawing.Size(144, 27);
+            this.TxtValor_Rtq.TabIndex = 12;
             this.TxtValor_Rtq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor_Rtq.TextChanged += new System.EventHandler(this.TxtValor_Rtq_TextChanged);
             this.TxtValor_Rtq.Validated += new System.EventHandler(this.TxtValor_Rtq_Validated);
@@ -8743,31 +8757,45 @@
             "Pendiente",
             "Cliente Acepta",
             "Cliente No Acepta"});
-            this.cmbcambio_condiciones.Location = new System.Drawing.Point(159, 55);
+            this.cmbcambio_condiciones.Location = new System.Drawing.Point(612, 42);
             this.cmbcambio_condiciones.Name = "cmbcambio_condiciones";
             this.cmbcambio_condiciones.Size = new System.Drawing.Size(168, 28);
-            this.cmbcambio_condiciones.TabIndex = 11;
+            this.cmbcambio_condiciones.TabIndex = 9;
             this.cmbcambio_condiciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbcambio_condiciones_KeyPress);
             // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(6, 60);
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label49.Location = new System.Drawing.Point(609, 22);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(145, 17);
+            this.label49.Size = new System.Drawing.Size(150, 16);
             this.label49.TabIndex = 24;
             this.label49.Text = "Cambio de condiciones";
+            // 
+            // TxtCuenta
+            // 
+            this.TxtCuenta.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtCuenta.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
+            this.TxtCuenta.Location = new System.Drawing.Point(389, 142);
+            this.TxtCuenta.MaxLength = 20;
+            this.TxtCuenta.Multiline = true;
+            this.TxtCuenta.Name = "TxtCuenta";
+            this.TxtCuenta.Size = new System.Drawing.Size(196, 28);
+            this.TxtCuenta.TabIndex = 17;
+            this.TxtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuenta_KeyPress);
+            this.TxtCuenta.Validated += new System.EventHandler(this.TxtCuenta_Validated);
             // 
             // Txtplazo_aprobado
             // 
             this.Txtplazo_aprobado.BackColor = System.Drawing.SystemColors.Window;
             this.Txtplazo_aprobado.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtplazo_aprobado.Location = new System.Drawing.Point(699, 21);
+            this.Txtplazo_aprobado.Location = new System.Drawing.Point(517, 42);
             this.Txtplazo_aprobado.Multiline = true;
             this.Txtplazo_aprobado.Name = "Txtplazo_aprobado";
-            this.Txtplazo_aprobado.Size = new System.Drawing.Size(50, 28);
-            this.Txtplazo_aprobado.TabIndex = 9;
+            this.Txtplazo_aprobado.Size = new System.Drawing.Size(40, 28);
+            this.Txtplazo_aprobado.TabIndex = 8;
             this.Txtplazo_aprobado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtplazo_aprobado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtplazo_aprobado_KeyPress);
             this.Txtplazo_aprobado.Validated += new System.EventHandler(this.Txtplazo_aprobado_Validated);
@@ -8775,10 +8803,10 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(594, 26);
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label48.Location = new System.Drawing.Point(493, 22);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(103, 17);
+            this.label48.Size = new System.Drawing.Size(106, 16);
             this.label48.TabIndex = 25;
             this.label48.Text = "Plazo Aprobado";
             // 
@@ -8792,7 +8820,7 @@
             "Compra de Cartera",
             "Retanqueo",
             "CPK + RTQ"});
-            this.cmbDestino.Location = new System.Drawing.Point(814, 21);
+            this.cmbDestino.Location = new System.Drawing.Point(814, 42);
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(150, 28);
             this.cmbDestino.TabIndex = 10;
@@ -8803,7 +8831,7 @@
             // 
             this.TxtConvenio.BackColor = System.Drawing.SystemColors.Window;
             this.TxtConvenio.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtConvenio.Location = new System.Drawing.Point(402, 55);
+            this.TxtConvenio.Location = new System.Drawing.Point(389, 92);
             this.TxtConvenio.Multiline = true;
             this.TxtConvenio.Name = "TxtConvenio";
             this.TxtConvenio.Size = new System.Drawing.Size(116, 28);
@@ -8811,16 +8839,26 @@
             this.TxtConvenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtConvenio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtConvenio_KeyPress);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label3.Location = new System.Drawing.Point(386, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "N° Cuenta";
+            // 
             // TxtRauto
             // 
             this.TxtRauto.BackColor = System.Drawing.SystemColors.Window;
             this.TxtRauto.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtRauto.Location = new System.Drawing.Point(581, 55);
+            this.TxtRauto.Location = new System.Drawing.Point(15, 92);
             this.TxtRauto.MaxLength = 30;
             this.TxtRauto.Multiline = true;
             this.TxtRauto.Name = "TxtRauto";
-            this.TxtRauto.Size = new System.Drawing.Size(169, 28);
-            this.TxtRauto.TabIndex = 12;
+            this.TxtRauto.Size = new System.Drawing.Size(162, 28);
+            this.TxtRauto.TabIndex = 11;
             this.TxtRauto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtRauto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRauto_KeyPress);
             // 
@@ -8828,23 +8866,23 @@
             // 
             this.TxtPlazo_solicitado.BackColor = System.Drawing.SystemColors.Window;
             this.TxtPlazo_solicitado.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtPlazo_solicitado.Location = new System.Drawing.Point(538, 21);
+            this.TxtPlazo_solicitado.Location = new System.Drawing.Point(420, 42);
             this.TxtPlazo_solicitado.Multiline = true;
             this.TxtPlazo_solicitado.Name = "TxtPlazo_solicitado";
-            this.TxtPlazo_solicitado.Size = new System.Drawing.Size(50, 28);
-            this.TxtPlazo_solicitado.TabIndex = 8;
+            this.TxtPlazo_solicitado.Size = new System.Drawing.Size(40, 28);
+            this.TxtPlazo_solicitado.TabIndex = 7;
             this.TxtPlazo_solicitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtPlazo_solicitado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPlazo_KeyPress);
             // 
             // TxtValor_aprobado
             // 
             this.TxtValor_aprobado.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtValor_aprobado.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtValor_aprobado.Location = new System.Drawing.Point(310, 21);
+            this.TxtValor_aprobado.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtValor_aprobado.Location = new System.Drawing.Point(212, 42);
             this.TxtValor_aprobado.Multiline = true;
             this.TxtValor_aprobado.Name = "TxtValor_aprobado";
-            this.TxtValor_aprobado.Size = new System.Drawing.Size(123, 28);
-            this.TxtValor_aprobado.TabIndex = 7;
+            this.TxtValor_aprobado.Size = new System.Drawing.Size(144, 28);
+            this.TxtValor_aprobado.TabIndex = 6;
             this.TxtValor_aprobado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtValor_aprobado.TextChanged += new System.EventHandler(this.TxtValor_aprobado_TextChanged);
             this.TxtValor_aprobado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtValor_aprobado_KeyPress);
@@ -8854,74 +8892,85 @@
             // 
             this.TxtScoring.BackColor = System.Drawing.SystemColors.Window;
             this.TxtScoring.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtScoring.Location = new System.Drawing.Point(66, 21);
-            this.TxtScoring.MaxLength = 10;
+            this.TxtScoring.Location = new System.Drawing.Point(15, 42);
+            this.TxtScoring.MaxLength = 20;
             this.TxtScoring.Multiline = true;
             this.TxtScoring.Name = "TxtScoring";
-            this.TxtScoring.Size = new System.Drawing.Size(134, 28);
-            this.TxtScoring.TabIndex = 6;
+            this.TxtScoring.Size = new System.Drawing.Size(162, 28);
+            this.TxtScoring.TabIndex = 5;
             this.TxtScoring.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtScoring.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtScoring_KeyPress);
+            this.TxtScoring.Validated += new System.EventHandler(this.TxtScoring_Validated);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(525, 60);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label11.Location = new System.Drawing.Point(12, 73);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.Size = new System.Drawing.Size(107, 16);
             this.label11.TabIndex = 23;
-            this.label11.Text = "R- Auto";
+            this.label11.Text = "RTQ Automatico";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(756, 26);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label10.Location = new System.Drawing.Point(811, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 17);
+            this.label10.Size = new System.Drawing.Size(54, 16);
             this.label10.TabIndex = 22;
             this.label10.Text = "Destino";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(438, 26);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label9.Location = new System.Drawing.Point(386, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 17);
+            this.label9.Size = new System.Drawing.Size(105, 16);
             this.label9.TabIndex = 20;
             this.label9.Text = "Plazo Solicitado";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 26);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(54, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Scoring";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(206, 26);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(209, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 17);
+            this.label8.Size = new System.Drawing.Size(104, 16);
             this.label8.TabIndex = 19;
             this.label8.Text = "Valor Aprobado";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(339, 60);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label7.Location = new System.Drawing.Point(389, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 17);
+            this.label7.Size = new System.Drawing.Size(65, 16);
             this.label7.TabIndex = 9;
             this.label7.Text = "Convenio";
+            // 
+            // lblValor_Retanqueo
+            // 
+            this.lblValor_Retanqueo.AutoSize = true;
+            this.lblValor_Retanqueo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor_Retanqueo.Location = new System.Drawing.Point(209, 73);
+            this.lblValor_Retanqueo.Name = "lblValor_Retanqueo";
+            this.lblValor_Retanqueo.Size = new System.Drawing.Size(142, 16);
+            this.lblValor_Retanqueo.TabIndex = 83;
+            this.lblValor_Retanqueo.Text = "Valor RTQ Automatico";
             // 
             // groupBox1
             // 
@@ -8930,18 +8979,16 @@
             this.groupBox1.Controls.Add(this.TxtNombre);
             this.groupBox1.Controls.Add(this.TxtEstatura);
             this.groupBox1.Controls.Add(this.TxtPeso);
-            this.groupBox1.Controls.Add(this.TxtCuenta);
             this.groupBox1.Controls.Add(this.TxtRadicado);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(38, 33);
+            this.groupBox1.Location = new System.Drawing.Point(38, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(971, 91);
+            this.groupBox1.Size = new System.Drawing.Size(971, 77);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
@@ -8955,7 +9002,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.DimGray;
             this.BtnBuscar.IconSize = 18;
             this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnBuscar.Location = new System.Drawing.Point(192, 25);
+            this.BtnBuscar.Location = new System.Drawing.Point(126, 41);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Rotation = 0D;
             this.BtnBuscar.Size = new System.Drawing.Size(30, 26);
@@ -8968,7 +9015,7 @@
             // 
             this.TxtCedula.BackColor = System.Drawing.SystemColors.Window;
             this.TxtCedula.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtCedula.Location = new System.Drawing.Point(291, 24);
+            this.TxtCedula.Location = new System.Drawing.Point(182, 41);
             this.TxtCedula.Multiline = true;
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(153, 28);
@@ -8980,10 +9027,10 @@
             // 
             this.TxtNombre.BackColor = System.Drawing.SystemColors.Window;
             this.TxtNombre.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtNombre.Location = new System.Drawing.Point(529, 24);
+            this.TxtNombre.Location = new System.Drawing.Point(354, 41);
             this.TxtNombre.Multiline = true;
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(434, 28);
+            this.TxtNombre.Size = new System.Drawing.Size(411, 28);
             this.TxtNombre.TabIndex = 2;
             this.TxtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
@@ -8992,7 +9039,8 @@
             // 
             this.TxtEstatura.BackColor = System.Drawing.SystemColors.Window;
             this.TxtEstatura.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtEstatura.Location = new System.Drawing.Point(80, 57);
+            this.TxtEstatura.Location = new System.Drawing.Point(787, 41);
+            this.TxtEstatura.MaxLength = 3;
             this.TxtEstatura.Multiline = true;
             this.TxtEstatura.Name = "TxtEstatura";
             this.TxtEstatura.Size = new System.Drawing.Size(70, 28);
@@ -9005,33 +9053,21 @@
             this.TxtPeso.BackColor = System.Drawing.SystemColors.Window;
             this.TxtPeso.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
             this.TxtPeso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtPeso.Location = new System.Drawing.Point(197, 57);
+            this.TxtPeso.Location = new System.Drawing.Point(878, 41);
+            this.TxtPeso.MaxLength = 3;
             this.TxtPeso.Multiline = true;
             this.TxtPeso.Name = "TxtPeso";
             this.TxtPeso.Size = new System.Drawing.Size(68, 28);
             this.TxtPeso.TabIndex = 4;
             this.TxtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
-            // 
-            // TxtCuenta
-            // 
-            this.TxtCuenta.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtCuenta.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtCuenta.Location = new System.Drawing.Point(351, 57);
-            this.TxtCuenta.MaxLength = 20;
-            this.TxtCuenta.Multiline = true;
-            this.TxtCuenta.Name = "TxtCuenta";
-            this.TxtCuenta.Size = new System.Drawing.Size(196, 28);
-            this.TxtCuenta.TabIndex = 5;
-            this.TxtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuenta_KeyPress);
-            this.TxtCuenta.Validated += new System.EventHandler(this.TxtCuenta_Validated);
+            this.TxtPeso.Validated += new System.EventHandler(this.TxtPeso_Validated);
             // 
             // TxtRadicado
             // 
             this.TxtRadicado.BackColor = System.Drawing.SystemColors.Window;
             this.TxtRadicado.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtRadicado.Location = new System.Drawing.Point(80, 24);
+            this.TxtRadicado.Location = new System.Drawing.Point(14, 40);
             this.TxtRadicado.Multiline = true;
             this.TxtRadicado.Name = "TxtRadicado";
             this.TxtRadicado.Size = new System.Drawing.Size(143, 28);
@@ -9042,60 +9078,50 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(14, 29);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(11, 21);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(63, 17);
+            this.label20.Size = new System.Drawing.Size(68, 16);
             this.label20.TabIndex = 12;
             this.label20.Text = "Radicado";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(156, 62);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label5.Location = new System.Drawing.Point(875, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 17);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Peso";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 62);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label4.Location = new System.Drawing.Point(784, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Estatura";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label1.Location = new System.Drawing.Point(179, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Cedula";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(280, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "N° Cuenta";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(472, 29);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label2.Location = new System.Drawing.Point(351, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre";
             // 
@@ -9103,15 +9129,16 @@
             // 
             this.groupBox6.Controls.Add(this.cmbestado);
             this.groupBox6.Controls.Add(this.TxtSaldo);
+            this.groupBox6.Controls.Add(this.lbexonerar);
             this.groupBox6.Controls.Add(this.BtnSimulador);
             this.groupBox6.Controls.Add(this.TxtTotal);
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(38, 637);
+            this.groupBox6.Location = new System.Drawing.Point(38, 673);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(971, 48);
+            this.groupBox6.Size = new System.Drawing.Size(971, 77);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Resultado";
@@ -9125,17 +9152,17 @@
             "Devuelto",
             "Suspendido",
             "Desembolso"});
-            this.cmbestado.Location = new System.Drawing.Point(538, 18);
+            this.cmbestado.Location = new System.Drawing.Point(297, 39);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(154, 25);
-            this.cmbestado.TabIndex = 102;
+            this.cmbestado.TabIndex = 55;
             // 
             // TxtSaldo
             // 
             this.TxtSaldo.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtSaldo.Enabled = false;
             this.TxtSaldo.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtSaldo.Location = new System.Drawing.Point(328, 18);
+            this.TxtSaldo.Location = new System.Drawing.Point(154, 40);
             this.TxtSaldo.MaxLength = 10;
             this.TxtSaldo.Multiline = true;
             this.TxtSaldo.Name = "TxtSaldo";
@@ -9166,7 +9193,7 @@
             this.TxtTotal.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtTotal.Location = new System.Drawing.Point(73, 18);
+            this.TxtTotal.Location = new System.Drawing.Point(9, 40);
             this.TxtTotal.MaxLength = 10;
             this.TxtTotal.Multiline = true;
             this.TxtTotal.Name = "TxtTotal";
@@ -9178,43 +9205,32 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(5, 21);
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label33.Location = new System.Drawing.Point(6, 21);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(64, 17);
+            this.label33.Size = new System.Drawing.Size(68, 16);
             this.label33.TabIndex = 24;
             this.label33.Text = "Total CPK";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(484, 21);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label21.Location = new System.Drawing.Point(299, 16);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 17);
+            this.label21.Size = new System.Drawing.Size(51, 16);
             this.label21.TabIndex = 103;
             this.label21.Text = "Estado";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(228, 21);
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label32.Location = new System.Drawing.Point(151, 18);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(84, 17);
+            this.label32.Size = new System.Drawing.Size(88, 16);
             this.label32.TabIndex = 26;
             this.label32.Text = "Saldo Cliente";
-            // 
-            // lbexonerar
-            // 
-            this.lbexonerar.AutoSize = true;
-            this.lbexonerar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbexonerar.ForeColor = System.Drawing.Color.Red;
-            this.lbexonerar.Location = new System.Drawing.Point(777, 696);
-            this.lbexonerar.Name = "lbexonerar";
-            this.lbexonerar.Size = new System.Drawing.Size(176, 20);
-            this.lbexonerar.TabIndex = 81;
-            this.lbexonerar.Text = "Se debe exonerar credito";
             // 
             // printDocument1
             // 
@@ -9239,7 +9255,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(742, 21);
+            this.label35.Location = new System.Drawing.Point(747, 753);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(103, 17);
             this.label35.TabIndex = 66;
@@ -9249,7 +9265,7 @@
             // 
             this.lblfecha_actual.AutoSize = true;
             this.lblfecha_actual.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha_actual.Location = new System.Drawing.Point(853, 21);
+            this.lblfecha_actual.Location = new System.Drawing.Point(858, 753);
             this.lblfecha_actual.Name = "lblfecha_actual";
             this.lblfecha_actual.Size = new System.Drawing.Size(0, 17);
             this.lblfecha_actual.TabIndex = 65;
@@ -9259,7 +9275,7 @@
             this.panel1.Controls.Add(this.BtnGuardar);
             this.panel1.Controls.Add(this.BtnImprimir);
             this.panel1.Controls.Add(this.BtnLimpiar);
-            this.panel1.Location = new System.Drawing.Point(38, 691);
+            this.panel1.Location = new System.Drawing.Point(38, 802);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 35);
             this.panel1.TabIndex = 68;
@@ -9278,7 +9294,7 @@
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Rotation = 0D;
             this.BtnGuardar.Size = new System.Drawing.Size(93, 28);
-            this.BtnGuardar.TabIndex = 18;
+            this.BtnGuardar.TabIndex = 56;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
@@ -9298,7 +9314,7 @@
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Rotation = 0D;
             this.BtnImprimir.Size = new System.Drawing.Size(98, 28);
-            this.BtnImprimir.TabIndex = 19;
+            this.BtnImprimir.TabIndex = 57;
             this.BtnImprimir.Text = "Imprimir";
             this.BtnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnImprimir.UseVisualStyleBackColor = false;
@@ -9318,7 +9334,7 @@
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Rotation = 0D;
             this.BtnLimpiar.Size = new System.Drawing.Size(91, 28);
-            this.BtnLimpiar.TabIndex = 22;
+            this.BtnLimpiar.TabIndex = 58;
             this.BtnLimpiar.Text = "Nuevo";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
@@ -9329,7 +9345,7 @@
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.label47.Location = new System.Drawing.Point(31, 308);
+            this.label47.Location = new System.Drawing.Point(3, 257);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(203, 21);
             this.label47.TabIndex = 69;
@@ -9342,19 +9358,19 @@
             this.panel2.Controls.Add(this.cbrestriccion);
             this.panel2.Controls.Add(this.cbcuenta);
             this.panel2.Controls.Add(this.cbimpagos);
-            this.panel2.Location = new System.Drawing.Point(29, 44);
+            this.panel2.Location = new System.Drawing.Point(11, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 162);
+            this.panel2.Size = new System.Drawing.Size(236, 130);
             this.panel2.TabIndex = 76;
             // 
             // cbpagador
             // 
             this.cbpagador.AutoSize = true;
             this.cbpagador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbpagador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbpagador.Location = new System.Drawing.Point(19, 125);
+            this.cbpagador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbpagador.Location = new System.Drawing.Point(16, 98);
             this.cbpagador.Name = "cbpagador";
-            this.cbpagador.Size = new System.Drawing.Size(122, 22);
+            this.cbpagador.Size = new System.Drawing.Size(116, 20);
             this.cbpagador.TabIndex = 75;
             this.cbpagador.Text = "VoBo pagador";
             this.cbpagador.UseVisualStyleBackColor = true;
@@ -9363,10 +9379,10 @@
             // 
             this.cbrestriccion.AutoSize = true;
             this.cbrestriccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbrestriccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbrestriccion.Location = new System.Drawing.Point(19, 87);
+            this.cbrestriccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbrestriccion.Location = new System.Drawing.Point(16, 67);
             this.cbrestriccion.Name = "cbrestriccion";
-            this.cbrestriccion.Size = new System.Drawing.Size(102, 22);
+            this.cbrestriccion.Size = new System.Drawing.Size(94, 20);
             this.cbrestriccion.TabIndex = 74;
             this.cbrestriccion.Text = "Restriccion";
             this.cbrestriccion.UseVisualStyleBackColor = true;
@@ -9375,10 +9391,10 @@
             // 
             this.cbcuenta.AutoSize = true;
             this.cbcuenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbcuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcuenta.Location = new System.Drawing.Point(19, 49);
+            this.cbcuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcuenta.Location = new System.Drawing.Point(16, 38);
             this.cbcuenta.Name = "cbcuenta";
-            this.cbcuenta.Size = new System.Drawing.Size(117, 22);
+            this.cbcuenta.Size = new System.Drawing.Size(109, 20);
             this.cbcuenta.TabIndex = 73;
             this.cbcuenta.Text = "Cuenta Activa";
             this.cbcuenta.UseVisualStyleBackColor = true;
@@ -9387,10 +9403,10 @@
             // 
             this.cbimpagos.AutoSize = true;
             this.cbimpagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbimpagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbimpagos.Location = new System.Drawing.Point(19, 11);
+            this.cbimpagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbimpagos.Location = new System.Drawing.Point(16, 11);
             this.cbimpagos.Name = "cbimpagos";
-            this.cbimpagos.Size = new System.Drawing.Size(84, 22);
+            this.cbimpagos.Size = new System.Drawing.Size(80, 20);
             this.cbimpagos.TabIndex = 72;
             this.cbimpagos.Text = "Impagos";
             this.cbimpagos.UseVisualStyleBackColor = true;
@@ -9411,7 +9427,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.label13.Location = new System.Drawing.Point(25, 221);
+            this.label13.Location = new System.Drawing.Point(3, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(196, 21);
             this.label13.TabIndex = 78;
@@ -9422,7 +9438,7 @@
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.label44.Location = new System.Drawing.Point(31, 329);
+            this.label44.Location = new System.Drawing.Point(3, 278);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(78, 21);
             this.label44.TabIndex = 70;
@@ -9431,6 +9447,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.TxtPendientes);
             this.panel3.Controls.Add(this.label27);
             this.panel3.Controls.Add(this.btn_segmentacion);
@@ -9442,18 +9459,81 @@
             this.panel3.Controls.Add(this.label36);
             this.panel3.Location = new System.Drawing.Point(1054, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 648);
+            this.panel3.Size = new System.Drawing.Size(283, 716);
             this.panel3.TabIndex = 80;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label29);
+            this.panel4.Controls.Add(this.btnBuscar_Entidad);
+            this.panel4.Controls.Add(this.TxtEntidad);
+            this.panel4.Controls.Add(this.lbentidad);
+            this.panel4.Location = new System.Drawing.Point(7, 358);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(263, 138);
+            this.panel4.TabIndex = 86;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.label29.Location = new System.Drawing.Point(3, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(115, 21);
+            this.label29.TabIndex = 85;
+            this.label29.Text = "Consultar Nit";
+            // 
+            // btnBuscar_Entidad
+            // 
+            this.btnBuscar_Entidad.BackColor = System.Drawing.Color.White;
+            this.btnBuscar_Entidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar_Entidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar_Entidad.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscar_Entidad.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar_Entidad.IconColor = System.Drawing.Color.Black;
+            this.btnBuscar_Entidad.IconSize = 18;
+            this.btnBuscar_Entidad.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscar_Entidad.Location = new System.Drawing.Point(148, 35);
+            this.btnBuscar_Entidad.Name = "btnBuscar_Entidad";
+            this.btnBuscar_Entidad.Rotation = 0D;
+            this.btnBuscar_Entidad.Size = new System.Drawing.Size(26, 26);
+            this.btnBuscar_Entidad.TabIndex = 84;
+            this.btnBuscar_Entidad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBuscar_Entidad.UseVisualStyleBackColor = false;
+            this.btnBuscar_Entidad.Click += new System.EventHandler(this.Buscar_Entidad);
+            // 
+            // TxtEntidad
+            // 
+            this.TxtEntidad.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtEntidad.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
+            this.TxtEntidad.Location = new System.Drawing.Point(13, 34);
+            this.TxtEntidad.MaxLength = 20;
+            this.TxtEntidad.Multiline = true;
+            this.TxtEntidad.Name = "TxtEntidad";
+            this.TxtEntidad.Size = new System.Drawing.Size(161, 28);
+            this.TxtEntidad.TabIndex = 82;
+            // 
+            // lbentidad
+            // 
+            this.lbentidad.AutoSize = true;
+            this.lbentidad.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbentidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.lbentidad.Location = new System.Drawing.Point(9, 82);
+            this.lbentidad.Name = "lbentidad";
+            this.lbentidad.Size = new System.Drawing.Size(0, 16);
+            this.lbentidad.TabIndex = 83;
             // 
             // TxtPendientes
             // 
             this.TxtPendientes.BackColor = System.Drawing.SystemColors.Window;
             this.TxtPendientes.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.TxtPendientes.Location = new System.Drawing.Point(5, 440);
+            this.TxtPendientes.Location = new System.Drawing.Point(7, 527);
             this.TxtPendientes.MaxLength = 3000;
             this.TxtPendientes.Multiline = true;
             this.TxtPendientes.Name = "TxtPendientes";
-            this.TxtPendientes.Size = new System.Drawing.Size(265, 175);
+            this.TxtPendientes.Size = new System.Drawing.Size(263, 175);
             this.TxtPendientes.TabIndex = 81;
             // 
             // label27
@@ -9461,7 +9541,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.label27.Location = new System.Drawing.Point(3, 416);
+            this.label27.Location = new System.Drawing.Point(3, 506);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(184, 21);
             this.label27.TabIndex = 80;
@@ -9472,15 +9552,15 @@
             this.btn_segmentacion.BackColor = System.Drawing.Color.White;
             this.btn_segmentacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_segmentacion.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_segmentacion.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_segmentacion.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_segmentacion.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.btn_segmentacion.IconColor = System.Drawing.Color.Black;
-            this.btn_segmentacion.IconSize = 29;
+            this.btn_segmentacion.IconSize = 24;
             this.btn_segmentacion.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_segmentacion.Location = new System.Drawing.Point(29, 258);
+            this.btn_segmentacion.Location = new System.Drawing.Point(7, 209);
             this.btn_segmentacion.Name = "btn_segmentacion";
             this.btn_segmentacion.Rotation = 0D;
-            this.btn_segmentacion.Size = new System.Drawing.Size(95, 38);
+            this.btn_segmentacion.Size = new System.Drawing.Size(69, 38);
             this.btn_segmentacion.TabIndex = 79;
             this.btn_segmentacion.Text = "VER";
             this.btn_segmentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -9497,7 +9577,7 @@
             this.Btn_comentarios.IconColor = System.Drawing.Color.Black;
             this.Btn_comentarios.IconSize = 29;
             this.Btn_comentarios.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_comentarios.Location = new System.Drawing.Point(29, 364);
+            this.Btn_comentarios.Location = new System.Drawing.Point(7, 307);
             this.Btn_comentarios.Name = "Btn_comentarios";
             this.Btn_comentarios.Rotation = 0D;
             this.Btn_comentarios.Size = new System.Drawing.Size(140, 38);
@@ -9507,11 +9587,21 @@
             this.Btn_comentarios.UseVisualStyleBackColor = false;
             this.Btn_comentarios.Click += new System.EventHandler(this.Btn_comentarios_Click);
             // 
+            // lbfuncionario
+            // 
+            this.lbfuncionario.AutoSize = true;
+            this.lbfuncionario.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfuncionario.ForeColor = System.Drawing.Color.Black;
+            this.lbfuncionario.Location = new System.Drawing.Point(472, 753);
+            this.lbfuncionario.Name = "lbfuncionario";
+            this.lbfuncionario.Size = new System.Drawing.Size(0, 17);
+            this.lbfuncionario.TabIndex = 83;
+            // 
             // pbAñadir_cpk
             // 
             this.pbAñadir_cpk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAñadir_cpk.Image = global::Usuarios_planta.Properties.Resources.plus_math_50px;
-            this.pbAñadir_cpk.Location = new System.Drawing.Point(1015, 406);
+            this.pbAñadir_cpk.Location = new System.Drawing.Point(1015, 443);
             this.pbAñadir_cpk.Name = "pbAñadir_cpk";
             this.pbAñadir_cpk.Size = new System.Drawing.Size(25, 26);
             this.pbAñadir_cpk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -9524,7 +9614,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(33)))));
             this.pictureBox3.Location = new System.Drawing.Point(837, 1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(172, 16);
+            this.pictureBox3.Size = new System.Drawing.Size(172, 20);
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
@@ -9533,7 +9623,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(101)))), ((int)(((byte)(124)))));
             this.pictureBox2.Location = new System.Drawing.Point(524, 1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(316, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(316, 20);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -9542,7 +9632,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
             this.pictureBox1.Location = new System.Drawing.Point(143, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(381, 16);
+            this.pictureBox1.Size = new System.Drawing.Size(381, 20);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -9554,9 +9644,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 838);
+            this.Controls.Add(this.lbfuncionario);
             this.Controls.Add(this.pbAñadir_cpk);
-            this.Controls.Add(this.lbexonerar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label35);
@@ -9591,6 +9681,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAñadir_cpk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -9729,5 +9821,11 @@
         private System.Windows.Forms.PictureBox pbAñadir_cpk;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox TxtPendientes;
+        private System.Windows.Forms.Label lbfuncionario;
+        private FontAwesome.Sharp.IconButton btnBuscar_Entidad;
+        private System.Windows.Forms.Label lbentidad;
+        private System.Windows.Forms.TextBox TxtEntidad;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label29;
     }
 }

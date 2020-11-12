@@ -153,7 +153,7 @@
             this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconSize = 25;
+            this.iconButton1.IconSize = 20;
             this.iconButton1.Location = new System.Drawing.Point(491, 9);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
@@ -164,11 +164,11 @@
             // lbfuncionario
             // 
             this.lbfuncionario.AutoSize = true;
-            this.lbfuncionario.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfuncionario.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfuncionario.ForeColor = System.Drawing.Color.White;
-            this.lbfuncionario.Location = new System.Drawing.Point(523, 16);
+            this.lbfuncionario.Location = new System.Drawing.Point(523, 18);
             this.lbfuncionario.Name = "lbfuncionario";
-            this.lbfuncionario.Size = new System.Drawing.Size(52, 21);
+            this.lbfuncionario.Size = new System.Drawing.Size(43, 17);
             this.lbfuncionario.TabIndex = 6;
             this.lbfuncionario.Text = "label1";
             // 
