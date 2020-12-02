@@ -18,6 +18,7 @@ namespace Usuarios_planta
     {
         MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
+
         public void Guardar_datos_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
             TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtValor_Rtq, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
             TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor,
@@ -25,7 +26,7 @@ namespace Usuarios_planta
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
-            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtPendientes)
+            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo_cliente, ComboBox cmbestado, TextBox TxtPendientes)
         {
 
             con.Open();
@@ -42,13 +43,27 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_estatura", TxtEstatura.Text);
                 cmd.Parameters.AddWithValue("@_peso", TxtPeso.Text);
                 cmd.Parameters.AddWithValue("@_scoring", TxtScoring.Text);
-                cmd.Parameters.AddWithValue("@_valor_aprobado", TxtValor_aprobado.Text);
+                if (TxtValor_aprobado.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_aprobado", string.Format("{0:#}", double.Parse(TxtValor_aprobado.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_aprobado", TxtValor_aprobado.Text);
+                }          
                 cmd.Parameters.AddWithValue("@_plazo_solicitado", TxtPlazo_solicitado.Text);
                 cmd.Parameters.AddWithValue("@_plazo_aprobado", Txtplazo_aprobado.Text);
                 cmd.Parameters.AddWithValue("@_destino", cmbDestino.Text);
                 cmd.Parameters.AddWithValue("@_cambio_condiciones", cmbcambio_condiciones.Text);
                 cmd.Parameters.AddWithValue("@_r_Automatico", TxtRauto.Text);
-                cmd.Parameters.AddWithValue("@_valor_r_Automatico", TxtValor_Rtq.Text);
+                if (TxtValor_Rtq.Text!="")
+                {                    
+                    cmd.Parameters.AddWithValue("@_valor_r_Automatico", string.Format("{0:#}", double.Parse(TxtValor_Rtq.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_r_Automatico", TxtValor_Rtq.Text);                   
+                }                
                 cmd.Parameters.AddWithValue("@_convenio", TxtConvenio.Text);
                 cmd.Parameters.AddWithValue("@_codigo_oficina", TxtCod_oficina.Text);
                 cmd.Parameters.AddWithValue("@_sucursal", TxtNom_oficina.Text);
@@ -64,37 +79,107 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_numero_obligacion1", Txtobligacion1.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad1", TxtNit1.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad1", TxtNom_entidad1.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera1", TxtValor1.Text);
+                if (TxtValor1.Text!="")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera1", string.Format("{0:#}", double.Parse(TxtValor1.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera1", TxtValor1.Text);
+                }                
                 cmd.Parameters.AddWithValue("@_numero_obligacion2", Txtobligacion2.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad2", TxtNit2.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad2", TxtNom_entidad2.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera2", TxtValor2.Text);
+                if (TxtValor2.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera2", string.Format("{0:#}", double.Parse(TxtValor2.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera2", TxtValor2.Text);
+                }          
                 cmd.Parameters.AddWithValue("@_numero_obligacion3", Txtobligacion3.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad3", TxtNit3.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad3", TxtNom_entidad3.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera3", TxtValor3.Text);
+                if (TxtValor3.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera3", string.Format("{0:#}", double.Parse(TxtValor3.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera3", TxtValor3.Text);
+                }          
                 cmd.Parameters.AddWithValue("@_numero_obligacion4", Txtobligacion4.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad4", TxtNit4.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad4", TxtNom_entidad4.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera4", TxtValor4.Text);
+                if (TxtValor4.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera4", string.Format("{0:#}", double.Parse(TxtValor4.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera4", TxtValor4.Text);
+                }          
                 cmd.Parameters.AddWithValue("@_numero_obligacion5", Txtobligacion5.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad5", TxtNit5.Text);
-                cmd.Parameters.AddWithValue("@_nombre_entidad5", TxtNom_entidad5.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera5", TxtValor5.Text);
+                cmd.Parameters.AddWithValue("@_nombre_entidad5", TxtNom_entidad5.Text);                
+                if (TxtValor5.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera5", string.Format("{0:#}", double.Parse(TxtValor5.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera5", TxtValor5.Text);
+                }
                 cmd.Parameters.AddWithValue("@_numero_obligacion6", Txtobligacion6.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad6", TxtNit6.Text);
-                cmd.Parameters.AddWithValue("@_nombre_entidad6", TxtNom_entidad6.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera6", TxtValor6.Text);
+                cmd.Parameters.AddWithValue("@_nombre_entidad6", TxtNom_entidad6.Text);                
+                if (TxtValor6.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera6", string.Format("{0:#}", double.Parse(TxtValor6.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera6", TxtValor6.Text);
+                }                
                 cmd.Parameters.AddWithValue("@_numero_obligacion7", Txtobligacion7.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad7", TxtNit7.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad7", TxtNom_entidad7.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera7", TxtValor7.Text);
+                if (TxtValor7.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera7", string.Format("{0:#}", double.Parse(TxtValor7.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera7", TxtValor7.Text);
+                }
                 cmd.Parameters.AddWithValue("@_numero_obligacion8", Txtobligacion8.Text);
                 cmd.Parameters.AddWithValue("@_nit_entidad8", TxtNit8.Text);
                 cmd.Parameters.AddWithValue("@_nombre_entidad8", TxtNom_entidad8.Text);
-                cmd.Parameters.AddWithValue("@_valor_cartera8", TxtValor8.Text);
-                cmd.Parameters.AddWithValue("@_total_cpk", TxtTotal.Text);
-                cmd.Parameters.AddWithValue("@_saldo_cliente", TxtSaldo.Text);
+                if (TxtValor8.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera8", string.Format("{0:#}", double.Parse(TxtValor8.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_valor_cartera8", TxtValor8.Text);
+                }
+                if (TxtTotal.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_total_cpk", string.Format("{0:#}", double.Parse(TxtTotal.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_total_cpk", TxtTotal.Text);
+                }
+                if (TxtSaldo_cliente.Text != "")
+                {
+                    cmd.Parameters.AddWithValue("@_saldo_cliente", string.Format("{0:#}", double.Parse(TxtSaldo_cliente.Text)));
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_saldo_cliente", TxtSaldo_cliente.Text);
+                }
                 cmd.Parameters.AddWithValue("@_estado", cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_pendientes", TxtPendientes.Text);
                 cmd.Parameters.AddWithValue("@_nombre_funcionario", usuario.Nombre);

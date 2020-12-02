@@ -16,8 +16,6 @@ namespace Usuarios_planta
 {
     public partial class desembolso : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        Comandos cmds = new Comandos();
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -87,12 +85,6 @@ namespace Usuarios_planta
             }
         }
 
-        //private void BtnOrden_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-        //    Form formulario = new FormOrden();
-        //    formulario.Show();
-        //}
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();

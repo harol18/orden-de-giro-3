@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="prueba.exe.manifest" size="13274">
+    <dependentAssembly dependencyType="install" codebase="prueba.exe.manifest" size="13972">
       <assemblyIdentity name="prueba.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HBg8IHY8GdjLNki9aM4w3mcggEWcG+M1deBEDIn1MWg=</dsig:DigestValue>
+        <dsig:DigestValue>X7wmUuSZljjKamPXha2gjSE7RHSYDcawG1KhKZLm7AI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

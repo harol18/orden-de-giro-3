@@ -15,9 +15,6 @@ using System.IO;
 using Usuarios_planta.Capa_presentacion;
 
 
-
-
-
 namespace Usuarios_planta.Formularios
 {
     public partial class FormOrden : Form
@@ -113,16 +110,9 @@ namespace Usuarios_planta.Formularios
             cmbCoordinador.DataSource = dt;
         }
 
-        private double cpk1, cpk2, cpk3, cpk4, cpk5, cpk6, cpk7, cpk8, cpk9, cpk10, cpk11, cpktotal=0, cpksaldo=0;
+        private double cpk1, cpk2, cpk3, cpk4, cpk5, cpk6, cpk7, cpk8, cpk9, cpk10, cpktotal=0, cpksaldo=0;
 
-        private void TxtValor8_TextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(TxtValor8.Text, out cpk8))
-                Sumar1();
-            else
-                TxtValor8.Text = cpk8.ToString();
-        }        
-
+        
         private void TxtValor_aprobado_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(TxtValor_aprobado.Text, out cpk10))
@@ -132,13 +122,14 @@ namespace Usuarios_planta.Formularios
         }
 
         private void TxtTotal_TextChanged(object sender, EventArgs e)
-        {
+        {           
+
             if (double.TryParse(TxtTotal.Text, out cpk9))
                 Restar1();
             else
-                TxtSaldo.Text = cpk9.ToString();
-
-            if (Convert.ToDouble(TxtSaldo.Text) <= 2000000)
+                TxtSaldo_cliente.Text = cpk9.ToString();
+            
+            if (Convert.ToDouble(TxtSaldo_cliente.Text) <= 2000000)
             {
                 MessageBox.Show("Saldo del cliente menor a 2 millones por favor proceder a realizar simulador", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 BtnSimulador.Visible = true;
@@ -146,7 +137,7 @@ namespace Usuarios_planta.Formularios
             else
             {
                 BtnSimulador.Visible = false;
-            }
+            }     
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -158,33 +149,50 @@ namespace Usuarios_planta.Formularios
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
+            if (TxtValor_Rtq.Text!= "")
+            {
+                double resta = Convert.ToDouble(TxtSaldo_cliente.Text) - Convert.ToDouble(TxtValor_Rtq.Text);
+                if (resta<=2000000)
+                {                    
+                    BtnSimulador.Visible = true;
+                }                
+            }
+
             if (cmbcambio_condiciones.Text== "Cliente Acepta" || cmbcambio_condiciones.Text == "No Aplica")
             {
                 if (cmbDactiloscopia.Text== "Aprobada")
                 {
                     if (cbimpagos.Checked && cbcuenta.Checked && cbrestriccion.Checked && cbpagador.Checked)
                     {
-                        if (TxtRauto.Text != "" && TxtValor_Rtq.Text == "")
+                        if (TxtNom_gestor.Text=="")
                         {
-                            MessageBox.Show("Importante diligenciar el valor del retanqueo Automatico para validar el simulador", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Previo a imprimir proceder a crear asesor en la base de datos","Información",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            BtnGuardar.Visible = false;
-                            BtnImprimir.Visible = false;
-                            BtnLimpiar.Visible = false;
-                            pbAñadir_cpk.Visible = false;
+                            if (TxtRauto.Text != "" && TxtValor_Rtq.Text == "")
+                            {
+                                MessageBox.Show("Importante diligenciar el valor del retanqueo Automatico para validar el simulador", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                BtnGuardar.Visible = false;
+                                BtnImprimir.Visible = false;
+                                BtnLimpiar.Visible = false;
+                                pbAñadir_cpk.Visible = false;
 
-                            Graphics g = this.CreateGraphics();
-                            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-                            Graphics mg = Graphics.FromImage(bmp);
-                            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-                            printPreviewDialog1.ShowDialog();
-                            BtnGuardar.Visible = true;
-                            BtnImprimir.Visible = true;
-                            BtnLimpiar.Visible = true;
-                            pbAñadir_cpk.Visible = true;
+                                Graphics g = this.CreateGraphics();
+                                bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+                                Graphics mg = Graphics.FromImage(bmp);
+                                mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+                                printPreviewDialog1.ShowDialog();
+                                BtnGuardar.Visible = true;
+                                BtnImprimir.Visible = true;
+                                BtnLimpiar.Visible = true;
+                                pbAñadir_cpk.Visible = true;
+                            }
                         }
+                       
                     }
                     else
                     {
@@ -225,7 +233,7 @@ namespace Usuarios_planta.Formularios
                               Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3, Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4,
                               Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
                               Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
-                              TxtTotal, TxtSaldo, cmbestado,TxtPendientes);
+                              TxtTotal, TxtSaldo_cliente, cmbestado,TxtPendientes);
             if (TxtNom_entidad1.Text!="")
             {
                 TxtNom_entidad1.Visible = true;
@@ -281,6 +289,54 @@ namespace Usuarios_planta.Formularios
                 Txtobligacion8.Visible = true;
                 TxtNit8.Visible = true;
                 TxtValor8.Visible = true;
+            }
+            if (TxtValor_aprobado.Text != "")
+            {
+                TxtValor_aprobado.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor_aprobado.Text));
+            }
+            if (TxtValor_Rtq.Text != "")
+            {
+                TxtValor_Rtq.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor_Rtq.Text));
+            }
+            if (TxtValor1.Text != "")
+            {
+                TxtValor1.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor1.Text));
+            }
+            if (TxtValor2.Text != "")
+            {
+                TxtValor2.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor2.Text));
+            }
+            if (TxtValor3.Text != "")
+            {
+                TxtValor3.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor3.Text));
+            }
+            if (TxtValor4.Text != "")
+            {
+                TxtValor4.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor4.Text));
+            }
+            if (TxtValor5.Text!="")
+            {
+                TxtValor5.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor5.Text));
+            }
+            if (TxtValor6.Text != "")
+            {
+                TxtValor6.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor6.Text));
+            }
+            if (TxtValor7.Text != "")
+            {
+                TxtValor7.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor7.Text));
+            }
+            if (TxtValor8.Text != "")
+            {
+                TxtValor8.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor8.Text));
+            }
+            if (TxtTotal.Text != "")
+            {
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+            }
+            if (TxtSaldo_cliente.Text != "")
+            {
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));
             }
             if (TxtCedula.Text=="")
             {
@@ -371,7 +427,7 @@ namespace Usuarios_planta.Formularios
                               Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3, Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4,
                               Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
                               Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
-                              TxtTotal, TxtSaldo, cmbestado,TxtPendientes);
+                              TxtTotal, TxtSaldo_cliente, cmbestado,TxtPendientes);
             }  
 
         }
@@ -596,20 +652,15 @@ namespace Usuarios_planta.Formularios
             con.Close();
         }
 
-
-        private void cmbCoordinador_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;            
-        }
-
         private void TxtValor1_Validated(object sender, EventArgs e)
         {
             if (Convert.ToDouble(TxtValor1.Text) > 0)
             {
                
-                TxtValor1.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor1.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor1.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor1.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));
+                
             }
             else if (TxtValor1.Text == "")
             {
@@ -621,9 +672,10 @@ namespace Usuarios_planta.Formularios
         {
             if (Convert.ToDouble(TxtValor2.Text) > 0)
             {
-                TxtValor2.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor2.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor2.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor2.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));
+                
             }
             else if (TxtValor2.Text == "")
             {
@@ -635,9 +687,9 @@ namespace Usuarios_planta.Formularios
         {
             if (Convert.ToDouble(TxtValor3.Text) > 0)
             {
-                TxtValor3.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor3.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor3.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor3.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));                
             }
             else if (TxtValor3.Text == "")
             {
@@ -649,9 +701,9 @@ namespace Usuarios_planta.Formularios
         {
             if (Convert.ToDouble(TxtValor4.Text) > 0)
             {
-                TxtValor4.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor4.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor4.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor4.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));                
             }
             else if (TxtValor4.Text == "")
             {
@@ -663,9 +715,9 @@ namespace Usuarios_planta.Formularios
         {
             if (Convert.ToDouble(TxtValor5.Text) > 0)
             {
-                TxtValor5.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor5.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor5.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor5.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));                
             }
             else if (TxtValor5.Text == "")
             {
@@ -673,361 +725,27 @@ namespace Usuarios_planta.Formularios
             }
         }
 
-        private void TxtValor6_Validated(object sender, EventArgs e)
-        {
-            if (Convert.ToDouble(TxtValor6.Text) > 0)
-            {
-                TxtValor6.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor6.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
-            }
-            else if (TxtValor6.Text == "")
-            {
-                TxtValor6.Text = Convert.ToString(0);
-            }
-        }
-
-        private void TxtValor7_Validated(object sender, EventArgs e)
-        {
-            if (Convert.ToDouble(TxtValor7.Text) > 0)
-            {
-                TxtValor7.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor7.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
-            }
-            else if (TxtValor7.Text == "")
-            {
-                TxtValor7.Text = Convert.ToString(0);
-            }
-        }
-
-        private void Btn_calculo_Click(object sender, EventArgs e)
-        {
-            TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
-        }
-
 
         private void TxtValor_aprobado_Validated(object sender, EventArgs e)
-        {
-            TxtValor_aprobado.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor_aprobado.Text));
-            TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+        {            
+            TxtValor_aprobado.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor_aprobado.Text));
+            TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));            
         }
 
         private void TxtValor8_Validated(object sender, EventArgs e)
         {
             if (Convert.ToDouble(TxtValor8.Text) > 0)
             {
-                TxtValor8.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor8.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor8.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor8.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));                
             }
             else if (TxtValor8.Text == "")
             {
                 TxtValor8.Text = Convert.ToString(0);
             }
         }
-
-        private void TxtNit1_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit1.ReadOnly = true;
-        }
-
-        private void TxtNit2_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit2.ReadOnly = true;
-        }
-
-        private void TxtNit3_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit3.ReadOnly = true;
-        }
-
-        private void TxtNit4_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit4.ReadOnly = true;
-        }
-
-        private void TxtNit5_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit5.ReadOnly = true;
-        }
-
-        private void TxtNit6_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit6.ReadOnly = true;
-        }
-
-        private void TxtNit7_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit7.ReadOnly = true;
-        }
-
-        private void TxtNit8_KeyDown(object sender, KeyEventArgs e)
-        {
-            TxtNit8.ReadOnly = true;
-        }
-
-        private void TxtRadicado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtEstatura_KeyPress(object sender, KeyPressEventArgs e)
-        {            
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtPeso_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtCuenta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtScoring_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtValor_aprobado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtPlazo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtRauto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtConvenio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtCod_oficina_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtId_gestor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_gestor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion5_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion6_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion7_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void Txtobligacion8_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad5_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad6_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad7_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void TxtNom_entidad8_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
+        
         private void TxtCod_oficina_Validated(object sender, EventArgs e)
         {
             MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
@@ -1100,35 +818,13 @@ namespace Usuarios_planta.Formularios
             }
         }
 
-        private void Txtplazo_aprobado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void cmbcambio_condiciones_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         private void btn_segmentacion_Click(object sender, EventArgs e)
         {
             Form formulario = new Esquema_segmentacion();
             formulario.Show();
         }
 
-        private void cmbDestino_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
+       
         private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDestino.Text== "Compra de Cartera" && TxtNom_oficina.Text=="LETICIA")
@@ -1171,6 +867,8 @@ namespace Usuarios_planta.Formularios
                 Txtobligacion1.Visible = true;
                 TxtNit1.Visible = true;
                 TxtValor1.Visible = true;
+                TxtValor_Rtq.Enabled = false;
+                TxtRauto.Enabled = false;
             }
             else if (cmbDestino.Text == "Libre Inversion")
             {
@@ -1296,22 +994,12 @@ namespace Usuarios_planta.Formularios
             }
         }
 
-        private void TxtValor_Rtq_TextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(TxtValor_Rtq.Text, out cpk11))
-                Sumar1();
-            else
-                TxtValor_Rtq.Text = cpk11.ToString();
-        }
-
         private void TxtValor_Rtq_Validated(object sender, EventArgs e)
         {
             if (Convert.ToDouble(TxtValor_Rtq.Text) > 0)
             {
 
-                TxtValor_Rtq.Text = string.Format("{0:#,##0.00}", double.Parse(TxtValor_Rtq.Text));
-                TxtTotal.Text = string.Format("{0:#,##0.00}", double.Parse(TxtTotal.Text));
-                TxtSaldo.Text = string.Format("{0:#,##0.00}", double.Parse(TxtSaldo.Text));
+                TxtValor_Rtq.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor_Rtq.Text));                
             }
             else if (TxtValor_Rtq.Text == "")
             {
@@ -1437,11 +1125,6 @@ namespace Usuarios_planta.Formularios
             }
         }
 
-        private void cmbcampaña_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
         private void TxtPeso_Validated(object sender, EventArgs e)
         {
             string extrae_estatura;            
@@ -1453,17 +1136,6 @@ namespace Usuarios_planta.Formularios
             if (sobrepeso>=21)
             {
                 MessageBox.Show("Cliente presenta sobrepeso, total diferencia " + resultado + " Kilos" ,"Información",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-        }
-
-        private void TxtScoring_Validated(object sender, EventArgs e)
-        {
-            string largo = TxtScoring.Text;
-            string length = Convert.ToString(largo.Length);
-
-            if (Convert.ToInt32(length) < 20)
-            {
-                MessageBox.Show("Numero de scoring no contiene los 20 digitos correspondientes !! por favor diligenciar completo");
             }
         }
 
@@ -1488,7 +1160,7 @@ namespace Usuarios_planta.Formularios
         {
             Application.Exit();
         }
-        
+
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -1508,6 +1180,140 @@ namespace Usuarios_planta.Formularios
                 TxtNit8.Text = null;
             }
         }
+
+        private void TeclaEnter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void TxtValor6_Validated(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(TxtValor6.Text) > 0)
+            {
+                TxtValor6.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor6.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));
+            }
+            else if (TxtValor5.Text == "")
+            {
+                TxtValor5.Text = Convert.ToString(0);
+            }
+        }
+
+        private void TxtValor7_Validated(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(TxtValor7.Text) > 0)
+            {
+                TxtValor7.Text = string.Format("{0:#,##0.##}", double.Parse(TxtValor7.Text));
+                TxtTotal.Text = string.Format("{0:#,##0.##}", double.Parse(TxtTotal.Text));
+                TxtSaldo_cliente.Text = string.Format("{0:#,##0.##}", double.Parse(TxtSaldo_cliente.Text));
+            }
+            else if (TxtValor5.Text == "")
+            {
+                TxtValor5.Text = Convert.ToString(0);
+            }
+        }
+
+        private void TxtValor6_TextChanged_1(object sender, EventArgs e)
+        {
+            if (double.TryParse(TxtValor6.Text, out cpk6))
+                Sumar1();
+            else
+                TxtValor6.Text = cpk6.ToString();
+        }
+
+        private void TxtValor7_TextChanged_1(object sender, EventArgs e)
+        {
+            if (double.TryParse(TxtValor7.Text, out cpk7))
+                Sumar1();
+            else
+                TxtValor7.Text = cpk7.ToString();
+        }
+
+        private void TxtId_gestor_Validated(object sender, EventArgs e)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM gestores WHERE Cedula_Gestor = @Cedula_Gestor ", con);
+            comando.Parameters.AddWithValue("@Cedula_Gestor", TxtId_gestor.Text);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+                TxtNom_gestor.Text = registro["Nombre_Gestor"].ToString();                
+            }
+            else
+            {
+                TxtNom_gestor.Text = null;
+                MessageBox.Show("Asesor no se encuentra registrado, por favor reportar");
+                con.Close();
+            }
+            con.Close();
+        }
+
+        private void TxtNit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit1.ReadOnly = true;   
+        }
+
+        private void TxtNit2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit2.ReadOnly = true;
+        }
+
+        private void TxtNit3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit3.ReadOnly = true;
+        }
+
+        private void TxtNit4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit4.ReadOnly = true;
+        }
+
+        private void TxtNit5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit5.ReadOnly = true;
+        }
+
+        private void TxtNit6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit6.ReadOnly = true;
+        }
+
+        private void TxtNit7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit7.ReadOnly = true;
+        }
+
+        private void TxtNit8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TxtNit8.ReadOnly = true;
+        }
+
+        private void TxtValor5_TextChanged_1(object sender, EventArgs e)
+        {
+            if (double.TryParse(TxtValor5.Text, out cpk5))
+                Sumar1();
+            else
+                TxtValor5.Text = cpk5.ToString();
+        }
+
+        private void Modificar(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void TxtValor8_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(TxtValor8.Text, out cpk8))
+                Sumar1();
+            else
+                TxtValor8.Text = cpk8.ToString();
+        }
+
         private void TxtValor7_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(TxtValor7.Text, out cpk7))
@@ -1534,7 +1340,6 @@ namespace Usuarios_planta.Formularios
 
         private void TxtValor4_TextChanged(object sender, EventArgs e)
         {
-
             if (double.TryParse(TxtValor4.Text, out cpk4))
                 Sumar1();
             else
@@ -1560,7 +1365,6 @@ namespace Usuarios_planta.Formularios
 
         private void TxtValor1_TextChanged(object sender, EventArgs e)
         {
-
             if (double.TryParse(TxtValor1.Text, out cpk1))
                 Sumar1();
             else
@@ -1569,14 +1373,14 @@ namespace Usuarios_planta.Formularios
 
         private void Sumar1()
         {
-            cpktotal = cpk1+cpk2+cpk3+cpk4+cpk5+cpk6+cpk7+cpk8+cpk11;
+            cpktotal = cpk1+cpk2+cpk3+cpk4+cpk5+cpk6+cpk7+cpk8;
             TxtTotal.Text = cpktotal.ToString();
         }
-       
+      
         private void Restar1()
         {
             cpksaldo = cpk10 - cpk9;
-            TxtSaldo.Text = cpksaldo.ToString();
+            TxtSaldo_cliente.Text = cpksaldo.ToString();            
         }
     }
 }

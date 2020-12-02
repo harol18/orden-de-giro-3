@@ -209,15 +209,6 @@
     <None Include="Resources\Captura1.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="OutlookSocialProvider">
-      <Guid>{1F8E79BA-9268-4889-ADF3-6D2AABB3C32C}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>1</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="SharePointProvider">
       <Guid>{E301A065-3DF5-4378-A829-57B1EA986631}</Guid>
       <VersionMajor>1</VersionMajor>

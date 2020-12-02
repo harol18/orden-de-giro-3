@@ -42,7 +42,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 115);
+            this.label2.Location = new System.Drawing.Point(140, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 9;
@@ -52,7 +52,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(108, 178);
+            this.label3.Location = new System.Drawing.Point(140, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 11;
@@ -65,7 +65,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(111, 242);
+            this.button1.Location = new System.Drawing.Point(143, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 12;
@@ -80,7 +80,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(198, 242);
+            this.button2.Location = new System.Drawing.Point(230, 242);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 13;
@@ -97,7 +97,7 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 15;
-            this.iconButton1.Location = new System.Drawing.Point(113, 140);
+            this.iconButton1.Location = new System.Drawing.Point(145, 140);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(18, 20);
@@ -113,7 +113,7 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconSize = 15;
-            this.iconButton2.Location = new System.Drawing.Point(112, 205);
+            this.iconButton2.Location = new System.Drawing.Point(144, 205);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(18, 20);
@@ -124,7 +124,7 @@
             // 
             this.Txtuser.BackColor = System.Drawing.SystemColors.Window;
             this.Txtuser.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtuser.Location = new System.Drawing.Point(111, 136);
+            this.Txtuser.Location = new System.Drawing.Point(143, 136);
             this.Txtuser.Multiline = true;
             this.Txtuser.Name = "Txtuser";
             this.Txtuser.Size = new System.Drawing.Size(153, 28);
@@ -135,7 +135,7 @@
             // 
             this.Txtpass.BackColor = System.Drawing.SystemColors.Window;
             this.Txtpass.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtpass.Location = new System.Drawing.Point(111, 201);
+            this.Txtpass.Location = new System.Drawing.Point(143, 201);
             this.Txtpass.Multiline = true;
             this.Txtpass.Name = "Txtpass";
             this.Txtpass.Size = new System.Drawing.Size(153, 28);
@@ -162,7 +162,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Login";            
             this.ResumeLayout(false);
             this.PerformLayout();
 

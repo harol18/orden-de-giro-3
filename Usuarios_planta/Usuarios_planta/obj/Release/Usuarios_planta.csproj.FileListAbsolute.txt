@@ -560,8 +560,6 @@ C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V2\Usuar
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V2\Usuarios_planta\Usuarios_planta\obj\Release\prueba.application
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V2\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.csproj.CopyComplete
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V2\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.Capa_presentacion.Esquema_segmentacion.resources
-C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\prueba.exe.config
-C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\Interop.OutlookSocialProvider.dll
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\Interop.SharePointProvider.dll
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.csproj.ResolveComReference.cache
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.desembolso.resources
@@ -597,3 +595,4 @@ C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuar
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\prueba.exe.manifest
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\prueba.application
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.csproj.CopyComplete
+C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Orden de giro\Orden de Giro V3\Usuarios_planta\Usuarios_planta\bin\Release\System.Numerics.Vectors.dll

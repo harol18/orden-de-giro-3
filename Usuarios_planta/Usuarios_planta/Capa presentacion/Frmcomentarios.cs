@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Usuarios_planta.Capa_presentacion;
-using Usuarios_planta.Formularios;
 
 namespace Usuarios_planta.Capa_presentacion
 {
